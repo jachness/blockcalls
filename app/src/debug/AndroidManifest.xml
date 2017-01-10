@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.jachness.blockcalls">
+
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+</manifest>

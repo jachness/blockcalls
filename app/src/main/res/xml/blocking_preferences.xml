@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 Jonatan Cheiro Anriquez
+  ~
+  ~ This file is part of Block Calls.
+  ~
+  ~ Block Calls is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Block Calls is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <PreferenceCategory
+            android:persistent="false"
+            android:title="@string/pref_cat_blocking_status">
+            <CheckBoxPreference
+                android:key="blocking_enabled"
+                android:summary="@string/pref_blockingEnableSummary"
+                android:title="@string/pref_blockingEnable"/>
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:dependency="blocking_enabled"
+            android:persistent="false"
+            android:title="@string/pref_cat_blocking_methods">
+
+            <CheckBoxPreference
+                android:key="enable_black_list_key"
+                android:summary="@string/pref_blackListSummary"
+                android:title="@string/pref_blackList"/>
+
+            <CheckBoxPreference
+                android:key="allow_only_contacts_key"
+                android:summary="@string/pref_contactsOnlySummary"
+                android:title="@string/pref_contactsOnly"/>
+
+            <CheckBoxPreference
+                android:key="block_private_numbers_key"
+                android:summary="@string/pref_privateNumberSummary"
+                android:title="@string/pref_privateNumber"/>
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:dependency="blocking_enabled"
+            android:persistent="false"
+            android:title="@string/pref_cat_advance">
+            <CheckBoxPreference
+                android:key="strict_matching_key"
+                android:summary="@string/pref_strictMatchingSummary"
+                android:title="@string/pref_strictMatching"/>
+        </PreferenceCategory>
+
+
+</PreferenceScreen>

@@ -1,0 +1,12 @@
+Block Calls app
+The unwanted calls dismisser
+
+Gren color
+red		90
+gren	171
+blue	82
+
+Yellow color
+red		255
+gren	215
+blue	64

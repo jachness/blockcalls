@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 Jonatan Cheiro Anriquez
+  ~
+  ~ This file is part of Block Calls.
+  ~
+  ~ Block Calls is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Block Calls is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="addManualLabelExplanationBeginWith">(bloquear todos los número de teléfono que comienzan con este número)</string>
+    <string name="addManualLabelPhoneNumbers">Numero de teléfono</string>
+    <string name="addManualMsnFailed">El número de teléfono ya existe</string>
+    <string name="addManualMsnNumberAdded">%1$s agregado</string>
+    <string name="addManualRbBeginWith">Comienzan con</string>
+    <string name="addManualTitle">Ingresar número</string>
+    <string name="blackListDeleteAll">Todos los números en la lista negra</string>
+    <string name="blackListMnItemDeleteAll">Borrar todo</string>
+    <string name="blackListMnItemExport">Exportar a archivo</string>
+    <string name="blackListMnItemImport">Importar desde archivo</string>
+    <string name="blocked_number">Número blockeado</string>
+    <string name="blocking_service_description">Bloquear llamadas de teléfono</string>
+    <string name="callLogTitle">Registro de llamadas</string>
+    <string name="call_log_no_contacts_selected">Seleccione un registro</string>
+    <string name="common_add">Agregar</string>
+    <string name="common_async_task_canceled">El proceso fue cancelado. Por favor, intente nuevamente.</string>
+    <string name="common_cancel">Cancelar</string>
+    <string name="common_close">Cerrar</string>
+    <string name="common_contact_permission_message">Permiso de <b>Contactos</b> es requerido</string>
+    <string name="common_delete">Borrar</string>
+    <string name="common_error_external_storage">Almacenamiento externo no pudo ser accedido. ¿Hay instalado un sdcard y está montado?</string>
+    <string name="common_error_read_file">Error leyendo el archivo. ¿Es el archivo correcto?</string>
+    <string name="common_error_write_file">Error creando el archivo. ¿Hay espacio libre de almacenamiento?</string>
+    <string name="common_grant">Permitir</string>
+    <string name="common_private">Número privado</string>
+    <string name="common_read_media_message">Permiso de <b>Espacio de almacenamiento</b> es requerido</string>
+    <string name="common_write_media_message">Permiso de <b>Espacio de almacenamiento</b> es requerido</string>
+    <string name="contactTitle">Contactos</string>
+    <string name="contacts_no_contacts_selected">Seleccione un contacto</string>
+    <string name="enum_block_method_black_list">Lista negra</string>
+    <string name="enum_block_method_contacts">Contactos</string>
+    <string name="enum_block_method_private_number">Privado</string>
+    <string name="export_already_exist_message">El archivo de lista negra ya existe. ¿Quiere sobreescribirlo?</string>
+    <string name="export_progress_bar_message">Exportar a archivo</string>
+    <string name="export_success_message">El archivo fue grabado:\n %s</string>
+    <string name="export_title">Exportar lista negra</string>
+    <string name="import_message_quantity_zero">No se han importado números de teléfono</string>
+    <string name="import_progress_bar_message">Importando números de teléfono</string>
+    <string name="import_title">Importar lista negra</string>
+    <string name="initial_permissions_message_0">Por favor, permita <font color="#ffd740">Administrar Llamadas de Teléfono</font> y <font
+        color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
+    <string name="initial_permissions_message_1">Por favor, permita <font color="#ffd740">Administrar Llamadas de Teléfono</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
+    <string name="initial_permissions_message_2">Por favor, permita <font color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
+    <string name="initial_permissions_settings">Configurar aplicación</string>
+    <string name="logDeleteAll">Todos los registros</string>
+    <string name="mainMnItemBlockingSettings">Métodos de bloqueo</string>
+    <string name="mainMnItemSettings">Configuración</string>
+    <string name="mani_menu_title_add_new">Agregar número</string>
+    <string name="notification_blocked_content">Número de teléfono %s</string>
+    <string name="notification_blocked_ticker">Número de teléfono %s</string>
+    <string name="notification_blocked_title">Llamada bloqueada</string>
+    <string name="pref_blackList">Lista negra</string>
+    <string name="pref_blackListSummary">Bloquear números en la lista negra</string>
+    <string name="pref_blockingEnable">Habilitar bloqueo</string>
+    <string name="pref_blockingEnableSummary">Habilitar o deshabilitar todos los métodos de bloqueo</string>
+    <string name="pref_cat_advance">Configuración avanzada</string>
+    <string name="pref_cat_blocking_methods">Todos los métodos de bloqueo</string>
+    <string name="pref_cat_blocking_status">Estado de bloqueo</string>
+    <string name="pref_contactsOnly">Solo contactos</string>
+    <string name="pref_contactsOnlySummary">Bloquear todos los números de teléfono excepto los contactos</string>
+    <string name="pref_log">Registro</string>
+    <string name="pref_logSummary">Registrar todas las llamadas bloqueadas</string>
+    <string name="pref_notStatusBar">Llamadas bloqueadas</string>
+    <string name="pref_notStatusBarSummary">Mostrar notificaciones de bloqueo de llamadas</string>
+    <string name="pref_privateNumber">Números privados</string>
+    <string name="pref_privateNumberSummary">Bloquear números privados</string>
+    <string name="pref_strictMatching">Comparación estricta para la lista negra</string>
+    <string name="pref_strictMatchingSummary">Si una llamada fue bloqueada incorrectamente (debido a la falta del código de área), habilite esto para asegurar una comparación estricta de números de teléfono</string>
+    <string name="pref_title_blocking">Bloqueo</string>
+    <string name="pref_title_log">Registro</string>
+    <string name="pref_title_main">Configuración</string>
+    <string name="pref_title_notification">Notificaciones</string>
+    <string name="common_black_list">Lista negra</string>
+    <string name="common_log">Registro</string>
+
+    <string-array name="main_menu_add">
+        <item>Manualmente</item>
+        <item>Desde contactos</item>
+        <item>Desde registro de llamadas</item>
+    </string-array>
+
+    <plurals name="contacts_toast_contacts_added">
+        <item quantity="one">"%d contacto agregado"</item>
+        <item quantity="other">"%d contactos agregados"</item>
+    </plurals>
+
+    <plurals name="contacts_add_x_contacts">
+        <item quantity="one">Agregar 1 contact</item>
+        <item quantity="other">Agregar %d contactos</item>
+    </plurals>
+
+    <plurals name="call_log_toast_contacts_added">
+        <item quantity="one">"%d registro agregado"</item>
+        <item quantity="other">"%d registros agregados"</item>
+    </plurals>
+
+    <plurals name="call_log_add_x_contacts">
+        <item quantity="one">Agregar 1 registro</item>
+        <item quantity="other">Agregar %d registros</item>
+    </plurals>
+    <plurals name="import_message_quantity">
+        <item quantity="one">1 número de teléfono importado</item>
+        <item quantity="other">%s números de teléfono importados</item>
+    </plurals>
+    <string name="pref_title_privacy_policy">Política de privacidad</string>
+    <string name="pref_title_toc">Términos y Condiciones</string>
+    <string name="addManualErrorEmpty">El número de teléfono está vacío</string>
+    <string name="addManualErrorInvalid">El número de teléfono es inválido</string>
+</resources>

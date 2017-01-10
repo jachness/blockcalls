@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Jonatan Cheiro Anriquez
+  ~
+  ~ This file is part of Block Calls.
+  ~
+  ~ Block Calls is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Block Calls is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE resources [<!ENTITY appname "Block Calls">]>
+
+<resources>
+    <string name="app_name" translatable="false">&appname;</string>
+    <string name="addManualTitle">Input number</string>
+    <string name="addManualLabelPhoneNumbers">Phone number</string>
+    <string name="addManualRbBeginWith">Begin with</string>
+    <string name="addManualMsnNumberAdded">%1$s added</string>
+    <string name="addManualMsnFailed">The phone number already exists</string>
+
+    <string name="blackListDeleteAll">All numbers in black list</string>
+
+    <string name="logDeleteAll">All logs</string>
+
+
+    <plurals name="contacts_toast_contacts_added">
+        <item quantity="one">"%d contact added"</item>
+        <item quantity="other">"%d contacts added"</item>
+    </plurals>
+    <string name="contacts_no_contacts_selected">Select a contact</string>
+    <plurals name="contacts_add_x_contacts">
+        <item quantity="one">Add 1 contact</item>
+        <item quantity="other">Add %d contacts</item>
+    </plurals>
+
+    <plurals name="call_log_toast_contacts_added">
+        <item quantity="one">"%d call log added"</item>
+        <item quantity="other">"%d call logs added"</item>
+    </plurals>
+    <string name="call_log_no_contacts_selected">Select a call log</string>
+    <plurals name="call_log_add_x_contacts">
+        <item quantity="one">Add 1 call log</item>
+        <item quantity="other">Add %d call logs</item>
+    </plurals>
+
+    <string name="mainMnItemSettings">Settings</string>
+
+    <string-array name="main_menu_add">
+        <item>Manually</item>
+        <item>From contacts</item>
+        <item>From call logs</item>
+    </string-array>
+
+
+    <string name="common_ok" translatable="false">OK</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_private">Private number</string>
+    <string name="common_add">Add</string>
+    <string name="common_contact_permission_message"><b>Contact</b> permission is needed</string>
+    <string name="common_read_media_message"><b>Read storage</b> permission is needed</string>
+    <string name="common_write_media_message"><b>Write storage</b> permission is needed</string>
+    <string name="common_grant">Grant</string>
+    <string name="common_close">Close</string>
+    <string name="common_black_list">Black list</string>
+    <string name="common_log">Log</string>
+
+
+    <string name="pref_cat_advance">Advance configuration</string>
+    <string name="pref_privateNumber">Private numbers</string>
+    <string name="pref_privateNumberSummary">Block private numbers</string>
+    <string name="pref_blackList">Black list</string>
+    <string name="pref_blackListSummary">Block numbers in the black list</string>
+    <string name="pref_title_main">Settings</string>
+    <string name="pref_contactsOnly">Contacts only</string>
+    <string name="pref_contactsOnlySummary">Block all numbers except contacts</string>
+    <string name="pref_title_blocking">Blocking</string>
+    <string name="pref_strictMatching">Strict matching for black list</string>
+    <string name="pref_strictMatchingSummary">If phone calls are been blocked incorrectly (due to the lack of area code), enable this to ensure the exact match of phone numbers</string>
+    <string name="pref_title_log">Log</string>
+    <string name="pref_log">Log</string>
+    <string name="pref_logSummary">Register all blocked phone numbers</string>
+    <string name="pref_title_notification">Notifications</string>
+    <string name="pref_notStatusBar">Blocked calls</string>
+    <string name="pref_notStatusBarSummary">Show notifications about blocked calls</string>
+    <string name="pref_cat_blocking_status">Blocking status</string>
+    <string name="pref_blockingEnable">Enable blocking</string>
+    <string name="pref_blockingEnableSummary">Enable or disable all blocking methods</string>
+
+    <string name="enum_block_method_private_number">Private</string>
+    <string name="enum_block_method_contacts">Contacts</string>
+    <string name="enum_block_method_black_list">Black list</string>
+    <string name="contactTitle">Add from contacts</string>
+
+    <string name="mani_menu_title_add_new">Add number</string>
+    <string name="callLogTitle">Add from call log</string>
+
+    <string name="tag_id" translatable="false">0</string>
+    <string name="tag_data" translatable="false">1</string>
+    <string name="tag_viewHolder" translatable="false">2</string>
+
+    <string name="blocking_service_started" translatable="false">Block Calls service</string>
+    <string name="blocking_service_description">Block calls based on Block Calls App rules</string>
+
+    <string name="blocked_number">Blocked number</string>
+    <string name="notification_blocked_ticker">Phone number %s</string>
+    <string name="notification_blocked_title">Call blocked</string>
+    <string name="notification_blocked_content">Phone number %s</string>
+
+
+    <string name="export_title">Export black list</string>
+    <string name="export_success_message">File has been saved:\n %s</string>
+    <string name="export_already_exist_message">The black list file already exist. Do you want to override it?</string>
+    <string name="export_progress_bar_message">Exporting to file</string>
+
+
+    <string name="import_title">Import black list</string>
+    <string name="import_message_quantity_zero">No phone numbers imported</string>
+    <plurals name="import_message_quantity">
+        <item quantity="one">1 phone number imported</item>
+        <item quantity="other">%s phone numbers imported</item>
+    </plurals>
+
+    <string
+        name="common_error_external_storage">External storage could not be accessed. Is there an sdcard and is it mounted?</string>
+    <string
+        name="common_error_write_file">Error creating the file. Is there free storage space?</string>
+    <string
+        name="common_error_read_file">Error reading the file. Is it a correct file?</string>
+    <string name="common_async_task_canceled">The process was canceled. Please, try again.</string>
+    <string name="import_progress_bar_message">Importing phone numbers</string>
+
+    <string name="blackListMnItemExport">Export to file</string>
+    <string name="blackListMnItemImport">Import from file</string>
+    <string name="blackListMnItemDeleteAll">Delete all</string>
+    <string name="addManualLabelExplanationBeginWith">(block all phone numbers beginning with this number)</string>
+    <string name="pref_cat_blocking_methods">All blocking methods</string>
+    <string name="mainMnItemBlockingSettings">Blocking methods</string>
+
+    <string name="initial_permissions_settings">App settings</string>
+    <string name="initial_permissions_message_0">Please, allow <font
+        color='#ffd740'>Manage Phone Calls</font> and <font
+        color='#ffd740'>Do Not Disturb</font> to this app, in order to effectively block phone calls.</string>
+    <string name="initial_permissions_message_1">Please, allow <font
+        color='#ffd740'>Manage Phone Calls</font> to this app, in order to effectively block phone calls.</string>
+    <string name="initial_permissions_message_2">Please, allow <font
+        color='#ffd740'>Do Not Disturb</font> to this app, in order to effectively block phone calls.</string>
+
+    <string name="privacy_policy_information_collected_text" translatable="false">Block Calls application does not collect any kind of information including personal identification information, period.\n\nBlock Calls application does not establish any network connection to Internet in any way. Because of that, there is neither banner advertisements nor mobile analytics.</string>
+    <string name="privacy_policy_providers_text" translatable="false">Block Calls application is distributed through Google Play Store. Google may provide information about you in certain circumstances; for example, reports to diagnose and fix Block Calls issues.</string>
+    <string name="privacy_policy_updates_text" translatable="false">This privacy policy may be amended or updated. A notice will be provided of amendments to this privacy policy, as appropriate. Your continued use of Block Calls application confirms your acceptance of this privacy policy, as amended. If you do not agree to this privacy policy, as amended, you must stop using Block Calls application.</string>
+    <string name="pref_title_privacy_policy">Privacy Policy</string>
+
+    <string name="terms_and_conditions_tac_text" translatable="false">Block Calls application is offered to you, the user, conditioned upon your acceptance of all of the terms, conditions, policies and notices stated here. We reserve the right to make changes to these Terms and Conditions immediately by posting the changed Terms and Conditions in this location.\n\nYour continued use of the Block Calls application constitutes your agreement to all such terms, conditions and notices, and any changes to the Terms and Conditions made by us.\n\nThe term ‘Block Calls’ or ‘us’ or ‘we’ refers to the owner of the application. The term ‘you’ refers to the user of Block Calls application.\n\nThe use of this application is subject to the following terms of use:
+Use the application at your own risk. This application is provided to you “as is,” without warranty of any kind either express or implied. Block Calls application will not be accurate, reliable, uninterrupted or error-free. No agent or representative has the authority to create any warranty regarding the application on behalf of Block Calls application. Block Calls application reserves the right to change or discontinue at any time any aspect or feature of the application.</string>
+    <string name="terms_and_conditions_eol_text" translatable="false">Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the functionality found or offered on this application for any particular purpose. You acknowledge that such functionality may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</string>
+    <string name="terms_and_conditions_i_text" translatable="false">Your use of any functionality on this application is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any functionality, services or information available through this application meet your specific requirements.</string>
+    <string name="pref_title_toc">Term and Conditions</string>
+    <string name="addManualErrorEmpty">Phone number is empty</string>
+    <string name="addManualErrorInvalid">Phone number is invalid</string>
+
+
+</resources>
+

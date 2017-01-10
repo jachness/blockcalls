@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 Jonatan Cheiro Anriquez
+  ~
+  ~ This file is part of Block Calls.
+  ~
+  ~ Block Calls is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Block Calls is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:fadeScrollbars="false"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/addManualLabelPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/inner_margin"
+        android:text="@string/addManualLabelPhoneNumbers"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    <EditText
+        android:id="@+id/addManualTfPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addManualLabelPhoneNumber"
+        android:layout_marginBottom="@dimen/inner_margin"
+        android:layout_marginTop="@dimen/inner_margin"
+        android:ems="10"
+        android:inputType="phone"
+        android:maxLength="26"
+        android:maxLines="1"
+        tools:ignore="TextFields"/>
+
+    <CheckBox
+        android:id="@+id/addManualCbBeginWith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addManualTfPhoneNumber"
+        android:layout_marginBottom="@dimen/inner_margin"
+        android:layout_marginTop="@dimen/inner_margin"
+        android:text="@string/addManualRbBeginWith"/>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addManualCbBeginWith"
+        android:layout_alignBottom="@+id/addManualCbBeginWith"
+        android:layout_toEndOf="@+id/addManualLabelPhoneNumber"
+        android:layout_toRightOf="@+id/addManualLabelPhoneNumber"
+        android:text="@string/addManualLabelExplanationBeginWith"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="bottom|end"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/outer_margin"
+        android:paddingTop="@dimen/outer_margin">
+
+        <Button
+            android:id="@+id/addManualBtCancel"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/common_cancel"/>
+
+        <Button
+            android:id="@+id/addManualBtOk"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/common_add"
+            android:textColor="@color/colorAccent"
+            tools:text="Add 2 contacts"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+

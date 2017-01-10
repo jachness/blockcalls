@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.jachness.blockcalls">
+
+    <uses-sdk android:maxSdkVersion="24">
+    </uses-sdk>
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <application
+        android:name=".stuff.AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".androidService.CallBlockingService"
+            android:description="@string/blocking_service_description"
+            android:exported="false">
+        </service>
+
+        <receiver android:name=".broadcasts.WakeUpReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcasts.CallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".db.BlackListProvider"
+            android:authorities="com.jachness.blockcalls.blackList"
+            android:exported="false"/>
+        <provider
+            android:name=".db.LogProvider"
+            android:authorities="com.jachness.blockcalls.log"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AddActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jachness.blockcalls.activities.MainActivity"/>
+        </activity>
+
+        <activity
+            android:name=".activities.AllSettingsActivity"
+            android:exported="false"
+            android:label="@string/pref_title_main">
+        </activity>
+        <activity
+            android:name=".activities.BlockingSettingsActivity"
+            android:exported="false"
+            android:label="@string/pref_title_main">
+        </activity>
+        <activity
+            android:name="com.nononsenseapps.filepicker.FilePickerActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/FilePickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.InitialPermissionsActivity"
+            android:exported="false"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.PrivacyPolicyActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".activities.TocActivity"
+            android:exported="false">
+        </activity>
+
+    </application>
+
+</manifest>

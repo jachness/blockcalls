@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 Jonatan Cheiro Anriquez
+  ~
+  ~ This file is part of Block Calls.
+  ~
+  ~ Block Calls is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Block Calls is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference android:title="@string/pref_title_blocking">
+        <intent
+            android:targetClass="com.jachness.blockcalls.activities.BlockingSettingsActivity"
+            android:targetPackage="com.jachness.blockcalls"/>
+    </Preference>
+
+    <PreferenceScreen
+        android:persistent="false"
+        android:title="@string/pref_title_log">
+        <CheckBoxPreference
+            android:key="enable_log_key"
+            android:summary="@string/pref_logSummary"
+            android:title="@string/pref_log"/>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:persistent="false"
+        android:title="@string/pref_title_notification">
+        <CheckBoxPreference
+            android:key="notification_blocked_call"
+            android:summary="@string/pref_notStatusBarSummary"
+            android:title="@string/pref_notStatusBar"/>
+    </PreferenceScreen>
+
+    <Preference android:title="@string/pref_title_privacy_policy">
+        <intent
+            android:targetClass="com.jachness.blockcalls.activities.PrivacyPolicyActivity"
+            android:targetPackage="com.jachness.blockcalls"/>
+    </Preference>
+    <Preference android:title="@string/pref_title_toc">
+        <intent
+            android:targetClass="com.jachness.blockcalls.activities.TocActivity"
+            android:targetPackage="com.jachness.blockcalls"/>
+    </Preference>
+</PreferenceScreen>

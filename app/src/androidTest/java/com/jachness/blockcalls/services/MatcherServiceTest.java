@@ -89,9 +89,6 @@ public final class MatcherServiceTest extends AndroidTest {
 
 
         //Mobiles with prefix 15 (argentina) always match for non strict matching
-        /**
-         * TODO Check 15 prefix for argentina's mobiles
-         */
         callerID = "11-5491-4754";
         defaultRegion = "AR";
         otherNumber = "15-5491-4754";

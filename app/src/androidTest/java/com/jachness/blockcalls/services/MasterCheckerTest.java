@@ -42,7 +42,6 @@ public class MasterCheckerTest extends AndroidTest {
         try {
             Call call = normalizerService.normalizeCallerID("");
 
-
             Assert.assertFalse(checker.isBlockable(call));
             Assert.assertEquals(null, call.getBlockOrigin());
 
@@ -55,9 +54,6 @@ public class MasterCheckerTest extends AndroidTest {
             call = normalizerService.normalizeCallerID("1154914711");
             Assert.assertFalse(checker.isBlockable(call));
             Assert.assertEquals(null, call.getBlockOrigin());
-
-            //TODO test blacklist and contact
-
 
         } catch (PhoneNumberException e) {
             Assert.fail(e.getMessage());

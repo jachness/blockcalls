@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 #Block Calls app privacy policy
 
 ##Information collected

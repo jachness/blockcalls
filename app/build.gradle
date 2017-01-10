@@ -15,8 +15,8 @@ android {
         applicationId "com.jachness.blockcalls"
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 4
-        versionName "0.9.4"
+        versionCode 5
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = false
 
@@ -29,6 +29,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-sqlite.pro', 'proguard-dagger.pro', 'proguard-appcompat-v7.pro', 'proguard-rules.pro'
         }
         release {
+            debuggable false
             minifyEnabled true
             shrinkResources true
             proguardFiles = buildTypes.debug.proguardFiles

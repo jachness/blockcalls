@@ -52,6 +52,7 @@ public class CallReceiver extends BroadcastReceiver {
                     String incomingNumber = intent.getStringExtra(TelephonyManager
                             .EXTRA_INCOMING_NUMBER);
 
+                    Log.i(TAG, "Incoming number: {" + incomingNumber + "}");
                     if (DEBUG) {
                         Log.d(TAG, "Ringing number: " + incomingNumber);
                         Log.d(TAG, "Running " + CallBlockingService.class.getSimpleName() + ": " +

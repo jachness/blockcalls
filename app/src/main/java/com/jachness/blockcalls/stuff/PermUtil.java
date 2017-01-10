@@ -86,7 +86,7 @@ public class PermUtil {
     @DebugLog
     public static boolean[] checkInitialPermissions(Context context) {
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M) {
-            return new boolean[]{checkCallPhone(context)};
+            return new boolean[]{checkCallPhone(context), true};
         }
         //Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
         return new boolean[]{checkCallPhone(context), checkNotificationPolicyAccess(context)};

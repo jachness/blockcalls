@@ -34,6 +34,11 @@ public class FileException extends Exception {
         this.errorCode = errorCode;
     }
 
+    public FileException(int errorCode, String message) {
+        super(message);
+        this.errorCode = errorCode;
+    }
+
     public FileException(int errorCode, String message, Throwable cause) {
         super(message, cause);
         this.errorCode = errorCode;

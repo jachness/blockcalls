@@ -117,6 +117,9 @@ public class ImportExportWrapper {
 
     @DebugLog
     public int importBlackList(Uri uri) throws FileException {
+        if (uri == null) {
+            throw new FileException(FileException.READ_FILE_ERROR, "Uri is null");
+        }
         File file = new File(uri.getPath());
         BufferedReader br = null;
         String line = null;

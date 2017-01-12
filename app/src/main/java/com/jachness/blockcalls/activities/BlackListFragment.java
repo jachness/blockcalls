@@ -317,7 +317,7 @@ public class BlackListFragment extends ListFragment implements LoaderManager
     }
 
     private void doImport() {
-        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent i = new Intent(getActivity(), FilePickerActivity.class);
         i.putExtra(FilePickerActivity.EXTRA_ALLOW_MULTIPLE, false);
         i.putExtra(FilePickerActivity.EXTRA_ALLOW_CREATE_DIR, false);
         i.putExtra(FilePickerActivity.EXTRA_MODE, FilePickerActivity.MODE_FILE);
@@ -401,7 +401,6 @@ public class BlackListFragment extends ListFragment implements LoaderManager
     }
 
     public class ImportAsyncTask extends AsyncTask<Uri, Void, AsyncTaskResult<Integer>> {
-        private final String TAG = ImportAsyncTask.class.getName();
         private Dialog dialog;
 
         @Override
@@ -419,7 +418,6 @@ public class BlackListFragment extends ListFragment implements LoaderManager
                 int count = appContext.getImportExportWrapper().importBlackList(params[0]);
                 return new AsyncTaskResult<>(count);
             } catch (FileException e) {
-                Log.w(TAG, e.getMessage(), e);
                 return new AsyncTaskResult<>(e);
             }
         }
@@ -454,7 +452,6 @@ public class BlackListFragment extends ListFragment implements LoaderManager
     }
 
     public class ExportAsyncTask extends AsyncTask<Void, Void, AsyncTaskResult<String>> {
-        private final String TAG = ExportAsyncTask.class.getName();
         private Dialog dialog;
 
         @Override
@@ -472,7 +469,6 @@ public class BlackListFragment extends ListFragment implements LoaderManager
                 String fullPath = appContext.getImportExportWrapper().exportBlackList();
                 return new AsyncTaskResult<>(fullPath);
             } catch (FileException e) {
-                Log.w(TAG, e.getMessage(), e);
                 return new AsyncTaskResult<>(e);
             }
         }

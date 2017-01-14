@@ -29,7 +29,7 @@
 
     <string name="blackListDeleteAll">All numbers in black list</string>
 
-    <string name="logDeleteAll">All logs</string>
+    <string name="logDeleteAll">All blocked call registry</string>
 
 
     <plurals name="contacts_toast_contacts_added">
@@ -72,7 +72,8 @@
     <string name="common_grant">Grant</string>
     <string name="common_close">Close</string>
     <string name="common_black_list">Black list</string>
-    <string name="common_log">Log</string>
+    <string name="common_log">Blocked Calls</string>
+    <string name="common_next">Next</string>
 
 
     <string name="pref_cat_advance">Advance configuration</string>
@@ -86,8 +87,8 @@
     <string name="pref_title_blocking">Blocking</string>
     <string name="pref_strictMatching">Strict matching for black list</string>
     <string name="pref_strictMatchingSummary">If phone calls are been blocked incorrectly (due to the lack of area code), enable this to ensure the exact match of phone numbers</string>
-    <string name="pref_title_log">Log</string>
-    <string name="pref_log">Log</string>
+    <string name="pref_title_log">Blocked call registry</string>
+    <string name="pref_log">Register</string>
     <string name="pref_logSummary">Register all blocked phone numbers</string>
     <string name="pref_title_notification">Notifications</string>
     <string name="pref_notStatusBar">Blocked calls</string>
@@ -168,6 +169,19 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="addManualErrorEmpty">Phone number is empty</string>
     <string name="addManualErrorInvalid">Phone number is invalid</string>
 
+    <string name="pref_lesson_1">Basic tutorial</string>
+    <string name="pref_lesson_1_Summary">Restart basic tutorial</string>
+    <string name="pref_title_tutorial">Tutorial</string>
+    <string name="couch_lesson1_Title4">Done!</string>
+    <string name="couch_lesson1_Title5">More blocking options</string>
+    <string name="couch_lesson1_Title2">Black list</string>
+    <string name="couch_lesson1_Title1">Welcome</string>
+    <string name="couch_lesson1_Title3">Add a number to the black list</string>
+    <string name="couch_lesson1_Detail1">This tutorial will guide you through the basic functionality to block unwanted calls.</string>
+    <string name="couch_lesson1_Detail2">The black list is simply a list of phone numbers you want to block. When you receive a phone call, which number is registered in the black list, the app hangs up the call immediately.</string>
+    <string name="couch_lesson1_Detail3">Tap the + button and choose any of the 3 options. When you finish, you will see the new number in the blacklist.</string>
+    <string name="couch_lesson1_Detail4">The next time you are called from a blacklisted number, the app will block the call and the @ icon will appear in the notification bar. That way you\'ll know that a call was blocked by the app.</string>
+    <string name="couch_lesson1_Detail5">You will find more blocking options in this icon. For example, block all private calls or only allow calls that are registered to your contacts.</string>
 
 </resources>
 

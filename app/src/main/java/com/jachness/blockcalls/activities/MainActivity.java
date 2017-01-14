@@ -22,6 +22,7 @@ package com.jachness.blockcalls.activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -39,11 +40,18 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.Target;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.jachness.blockcalls.BuildConfig;
 import com.jachness.blockcalls.R;
 import com.jachness.blockcalls.androidService.CallBlockingService;
@@ -51,6 +59,7 @@ import com.jachness.blockcalls.db.LogTable;
 import com.jachness.blockcalls.stuff.AppContext;
 import com.jachness.blockcalls.stuff.AppPreferences;
 import com.jachness.blockcalls.stuff.PermUtil;
+import com.jachness.blockcalls.stuff.ToolbarActionItemTarget;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private AppPreferences appPreferences;
     private FloatingActionButton fab;
 
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private int counter = 0;
+    private ShowcaseView showcase;
+
+
     @Override
     @DebugLog
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         setContentView(R.layout.main);
 
         coordinatorLayout = findViewById(R.id.main_coordinator_layout);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -101,7 +116,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         viewPager.addOnPageChangeListener(this);
         viewPager.setAdapter(adapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
         fab = (FloatingActionButton) findViewById(R.id.mainFloatingActionButton);
@@ -116,6 +132,108 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    private void doCoach() {
+        if (showcase == null) {
+            ArrayList<View> foundViews = new ArrayList<>();
+            counter = 0;
+
+            toolbar.findViewsWithText(foundViews, getResources().getString(R.string.app_name), View
+                    .FIND_VIEWS_WITH_TEXT);
+            if (foundViews.size() != 1) throw new RuntimeException("Should not be here");
+            final Target target1 = new ViewTarget(foundViews.get(0));
+
+            foundViews.clear();
+            tabLayout.findViewsWithText(foundViews, getResources().getString(R.string
+                    .common_black_list), View.FIND_VIEWS_WITH_TEXT);
+            if (foundViews.size() != 1) throw new RuntimeException("Should not be here");
+            final Target target2 = new ViewTarget(foundViews.get(0));
+
+            final Target target3 = new ViewTarget(fab);
+            final Target target4 = new ToolbarActionItemTarget(toolbar, R.id
+                    .mainMnBlockingSettings);
+
+            View.OnClickListener listener = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch (counter) {
+                        case 0:
+                            showcase.setShowcase(target2, true);
+                            showcase.setContentTitle(getResources().getString(R.string
+                                    .couch_lesson1_Title2));
+                            showcase.setContentText(getResources().getString(R.string
+                                    .couch_lesson1_Detail2));
+                            break;
+
+                        case 1:
+                            showcase.setShowcase(target3, true);
+                            showcase.setContentTitle(getResources().getString(R.string
+                                    .couch_lesson1_Title3));
+                            showcase.setContentText(getResources().getString(R.string
+                                    .couch_lesson1_Detail3));
+                            break;
+
+                        case 2:
+                            showcase.setTarget(Target.NONE);
+                            showcase.setContentTitle(getResources().getString(R.string
+                                    .couch_lesson1_Title4));
+
+
+                            Drawable d = null;
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES
+                                    .LOLLIPOP) {
+                                d = getResources().getDrawable(R.drawable.ic_stat_call_blocked,
+                                        getTheme());
+                            } else {
+                                d = getResources().getDrawable(R.drawable.ic_stat_call_blocked);
+                            }
+                            d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
+                            ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BOTTOM);
+                            String src = getResources().getString(R.string.couch_lesson1_Detail4);
+                            SpannableString str = new SpannableString(src);
+                            int index = str.toString().indexOf("@");
+                            str.setSpan(span, index, index + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+
+                            showcase.setContentText(str);
+                            break;
+                        case 3:
+                            showcase.setShowcase(target4, true);
+                            showcase.setContentTitle(getResources().getString(R.string
+                                    .couch_lesson1_Title5));
+                            showcase.setContentText(getResources().getString(R.string
+                                    .couch_lesson1_Detail5));
+                            showcase.setButtonText(getString(R.string.common_close));
+                            break;
+                        case 4:
+                            appPreferences.setLesson1(true);
+                            showcase.hide();
+                            showcase = null;
+                            break;
+                    }
+                    counter++;
+                }
+            };
+
+            showcase = new ShowcaseView.Builder(this)
+                    .setTarget(target1)
+                    .setContentTitle(getResources().getString(R.string.couch_lesson1_Title1))
+                    .setContentText(getResources().getString(R.string.couch_lesson1_Detail1))
+                    .withMaterialShowcase()
+                    .setStyle(R.style.ShowcaseTheme)
+                    .setOnClickListener(listener)
+                    .build();
+
+            int margin = (int) getResources().getDimension(R.dimen.activity_vertical_margin);
+            RelativeLayout.LayoutParams lps = new RelativeLayout.LayoutParams(RelativeLayout
+                    .LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            lps.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+            lps.addRule(RelativeLayout.CENTER_HORIZONTAL);
+            lps.setMargins(margin, margin, margin, margin);
+
+            showcase.setButtonPosition(lps);
+        }
+    }
+
     @Override
     @DebugLog
     protected void onResume() {
@@ -126,6 +244,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             Intent i = new Intent(getApplicationContext(), CallBlockingService.class);
             i.putExtra(CallBlockingService.DRY, true);
             startService(i);
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH && !appPreferences
+                .isLesson1()) {
+            doCoach();
         }
     }
 

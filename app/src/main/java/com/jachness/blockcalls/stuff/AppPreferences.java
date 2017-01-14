@@ -33,6 +33,7 @@ public class AppPreferences {
 
     public static final String ALLOW_ONLY_CONTACTS = "allow_only_contacts_key";
     public static final String BLOCKING_ENABLED = "blocking_enabled";
+    public static final String LESSON_1 = "lesson_1";
     private static final String BLOCK_PRIVATE_NUMBERS = "block_private_numbers_key";
     private static final String ENABLE_BLACK_LIST = "enable_black_list_key";
     private static final String FIRST_TIME = "first_time_key";
@@ -49,6 +50,7 @@ public class AppPreferences {
     private static final boolean DEFAULT_BE = true;
     private static final boolean DEFAULT_NBC = true;
     private static final boolean DEFAULT_FTPP = true;
+    private static final boolean DEFAULT_L1 = false;
     private final Context context;
 
     public AppPreferences(Context context) {
@@ -129,6 +131,15 @@ public class AppPreferences {
     public void setFirstTimePhonePerm(boolean enable) {
         set(FIRST_TIME_PHONE_PERM, enable);
     }
+
+    public boolean isLesson1() {
+        return get(LESSON_1, DEFAULT_L1);
+    }
+
+    public void setLesson1(boolean enable) {
+        set(LESSON_1, enable);
+    }
+
 
 
     @SuppressLint("CommitPrefEdits")

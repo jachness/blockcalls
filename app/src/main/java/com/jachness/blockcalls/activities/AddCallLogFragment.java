@@ -185,11 +185,10 @@ public class AddCallLogFragment extends ListFragment implements LoaderManager
         String exclusionNullNumber = CallLog.Calls.NUMBER + " IS NOT NULL AND " + CallLog.Calls
                 .NUMBER + " <> \'\' AND ";
 
-        String types = CallLog.Calls.INCOMING_TYPE + "," + CallLog.Calls.MISSED_TYPE;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            types += "," + CallLog.Calls.REJECTED_TYPE;
-        }
-        String exclusionCallType = CallLog.Calls.TYPE + " IN (" + types + ") AND ";
+        String types = CallLog.Calls.OUTGOING_TYPE + "," + CallLog.Calls.VOICEMAIL_TYPE + "," +
+                CallLog.Calls.BLOCKED_TYPE;
+
+        String exclusionCallType = CallLog.Calls.TYPE + " NOT IN (" + types + ") AND ";
         //See CallLog.Calls.NUMBER_PRESENTATION for this filter
         String exclusionUnavailableNumber = "'-' IS NOT substr(" + CallLog.Calls.NUMBER + ",0,2) " +
                 "AND ";

@@ -15,8 +15,8 @@ android {
         applicationId "com.jachness.blockcalls"
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 6
-        versionName "1.0.0"
+        versionCode 7
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = false
 

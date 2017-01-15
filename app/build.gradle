@@ -65,6 +65,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.1.0'
     compile 'com.android.support:design:25.1.0'
     compile 'com.android.support:support-annotations:25.1.0'
+    compile 'com.github.amlcurran.showcaseview:library:5.4.3'
 
     compile 'com.google.dagger:dagger:2.7'
     compile 'com.nononsenseapps:filepicker:3.1.0'

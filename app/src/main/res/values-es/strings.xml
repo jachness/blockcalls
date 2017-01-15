@@ -63,7 +63,7 @@
     <string name="initial_permissions_message_1">Por favor, permita <font color="#ffd740">Administrar Llamadas de Teléfono</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
     <string name="initial_permissions_message_2">Por favor, permita <font color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
     <string name="initial_permissions_settings">Configurar aplicación</string>
-    <string name="logDeleteAll">Todos los registros</string>
+    <string name="logDeleteAll">Todos los registros de llamadas bloqueadas</string>
     <string name="mainMnItemBlockingSettings">Métodos de bloqueo</string>
     <string name="mainMnItemSettings">Configuración</string>
     <string name="mani_menu_title_add_new">Agregar número</string>
@@ -79,7 +79,7 @@
     <string name="pref_cat_blocking_status">Estado de bloqueo</string>
     <string name="pref_contactsOnly">Solo contactos</string>
     <string name="pref_contactsOnlySummary">Bloquear todos los números de teléfono excepto los contactos</string>
-    <string name="pref_log">Registro</string>
+    <string name="pref_log">Registrar</string>
     <string name="pref_logSummary">Registrar todas las llamadas bloqueadas</string>
     <string name="pref_notStatusBar">Llamadas bloqueadas</string>
     <string name="pref_notStatusBarSummary">Mostrar notificaciones de bloqueo de llamadas</string>
@@ -88,11 +88,11 @@
     <string name="pref_strictMatching">Comparación estricta para la lista negra</string>
     <string name="pref_strictMatchingSummary">Si una llamada fue bloqueada incorrectamente (debido a la falta del código de área), habilite esto para asegurar una comparación estricta de números de teléfono</string>
     <string name="pref_title_blocking">Bloqueo</string>
-    <string name="pref_title_log">Registro</string>
+    <string name="pref_title_log">Registro de llamadas bloqueadas</string>
     <string name="pref_title_main">Configuración</string>
     <string name="pref_title_notification">Notificaciones</string>
     <string name="common_black_list">Lista negra</string>
-    <string name="common_log">Registro</string>
+    <string name="common_log">Llamadas bloqueadas</string>
 
     <string-array name="main_menu_add">
         <item>Manualmente</item>
@@ -127,4 +127,20 @@
     <string name="pref_title_toc">Términos y Condiciones</string>
     <string name="addManualErrorEmpty">El número de teléfono está vacío</string>
     <string name="addManualErrorInvalid">El número de teléfono es inválido</string>
+    <string name="common_next">Siguiente</string>
+
+    <string name="couch_lesson1_Title1">Bienvenido</string>
+    <string name="couch_lesson1_Detail1">Este tutorial te guiará en la funcionalidad básica para bloquear llamadas no deseadas.</string>
+    <string name="couch_lesson1_Title2">Lista negra</string>
+    <string name="couch_lesson1_Detail2">La lista negra es simplemente una lista de números de teléfono que desea bloquear. Es decir, cuando te llamen desde un número que esté registrado en la lista negra, la app cortará o colgará la llamada inmediatamente.</string>
+    <string name="couch_lesson1_Title3">Agregar un número en la lista negra</string>
+    <string name="couch_lesson1_Detail3">Presiona el botón + y elige cualquiera de las 3 opciones. Cuando finalices, verás el nuevo número en la lista negra.</string>
+    <string name="couch_lesson1_Title4">Listo!</string>
+    <string name="couch_lesson1_Detail4">La próxima vez que te llamen desde un número registrado en la lista negra, la app bloqueará la llamada y aparecerá el siguiente ícono @ en la barra de notificación. Así sabrás que una llamada fue bloqueada por la app.</string>
+    <string name="couch_lesson1_Title5">Más posibilidades de bloqueo</string>
+    <string name="couch_lesson1_Detail5">En este ícono encontrarás más opciones de bloqueo. Por ejemplo, bloquear todas las llamadas privadas o solo admitir llamadas que estén registrados en tus contactos.</string>
+    <string name="pref_title_tutorial">Tutorial</string>
+    <string name="pref_lesson_1">Tutorial básico</string>
+    <string name="pref_lesson_1_Summary">Volver a tomar el tutorial básico</string>
+
 </resources>

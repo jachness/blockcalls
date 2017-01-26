@@ -106,7 +106,7 @@
     </plurals>
 
     <plurals name="contacts_add_x_contacts">
-        <item quantity="one">Agregar 1 contact</item>
+        <item quantity="one">Agregar 1 contacto</item>
         <item quantity="other">Agregar %d contactos</item>
     </plurals>
 

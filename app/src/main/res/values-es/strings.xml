@@ -134,7 +134,7 @@
     <string name="couch_lesson1_Title2">Lista negra</string>
     <string name="couch_lesson1_Detail2">La lista negra es simplemente una lista de números de teléfono que desea bloquear. Es decir, cuando te llamen desde un número que esté registrado en la lista negra, la app cortará o colgará la llamada inmediatamente.</string>
     <string name="couch_lesson1_Title3">Agregar un número en la lista negra</string>
-    <string name="couch_lesson1_Detail3">Presiona el botón + y elige cualquiera de las 3 opciones. Cuando finalices, verás el nuevo número en la lista negra.</string>
+    <string name="couch_lesson1_Detail3">Toque el botón + y elige cualquiera de las 3 opciones. Cuando finalices, verás el nuevo número en la lista negra.</string>
     <string name="couch_lesson1_Title4">Listo!</string>
     <string name="couch_lesson1_Detail4">La próxima vez que te llamen desde un número registrado en la lista negra, la app bloqueará la llamada y aparecerá el siguiente ícono @ en la barra de notificación. Así sabrás que una llamada fue bloqueada por la app.</string>
     <string name="couch_lesson1_Title5">Más posibilidades de bloqueo</string>
@@ -142,5 +142,10 @@
     <string name="pref_title_tutorial">Tutorial</string>
     <string name="pref_lesson_1">Tutorial básico</string>
     <string name="pref_lesson_1_Summary">Volver a tomar el tutorial básico</string>
+    <string name="logLabelEmpty">Aún no han habido llamadas bloqueadas</string>
+    <string name="blackListLabelEmpty">La lista negra está vacía.\n Toque el botón + para agregar un número de teléfono.</string>
+    <string name="callLogLabelEmpty">No hay llamadas entrantes</string>
+    <string name="contactLabelEmpty">No hay contactos disponibles</string>
+    <string name="app_name">Bloquear Llamadas</string>
 
 </resources>

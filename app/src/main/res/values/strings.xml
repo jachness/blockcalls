@@ -17,10 +17,8 @@
   ~ along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<!DOCTYPE resources [<!ENTITY appname "Block Calls">]>
-
 <resources>
-    <string name="app_name" translatable="false">&appname;</string>
+    <string name="app_name">Block Calls</string>
     <string name="addManualTitle">Input number</string>
     <string name="addManualLabelPhoneNumbers">Phone number</string>
     <string name="addManualRbBeginWith">Begin with</string>
@@ -182,6 +180,10 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="couch_lesson1_Detail3">Tap the + button and choose any of the 3 options. When you finish, you will see the new number in the blacklist.</string>
     <string name="couch_lesson1_Detail4">The next time you are called from a blacklisted number, the app will block the call and the @ icon will appear in the notification bar. That way you\'ll know that a call was blocked by the app.</string>
     <string name="couch_lesson1_Detail5">You will find more blocking options in this icon. For example, block all private calls or only allow calls that are registered to your contacts.</string>
+    <string name="blackListLabelEmpty">Black list is empty.\n Tap the + button to add a phone number.</string>
+    <string name="logLabelEmpty">No blocked calls yet</string>
+    <string name="callLogLabelEmpty">There is no incoming calls</string>
+    <string name="contactLabelEmpty">There is no contacts available</string>
 
 </resources>
 

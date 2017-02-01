@@ -119,11 +119,9 @@ public class CallBlockingService extends Service {
                         .getAppPreferences().isNotificationBlockedCall()) {
                     if (BuildConfig.DEBUG) Log.i(TAG, "Blocked number: " + incomingNumber);
                     final Notification not = new NotificationCompat.Builder(this)
-                            .setTicker(getString(R.string.notification_blocked_ticker,
-                                    formattedNumber))
+                            .setTicker(formattedNumber)
                             .setContentTitle(getString(R.string.notification_blocked_title))
-                            .setContentText(getString(R.string.notification_blocked_content,
-                                    formattedNumber))
+                            .setContentText(formattedNumber)
                             .setSmallIcon(R.drawable.ic_stat_call_blocked)
                             .setAutoCancel(true)
                             //Content intent is added to satisfy android 2.x requirements

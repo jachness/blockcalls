@@ -26,6 +26,7 @@ import android.text.TextUtils;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
+import com.jachness.blockcalls.R;
 import com.jachness.blockcalls.exceptions.PhoneNumberException;
 import com.jachness.blockcalls.exceptions.TooShortNumberException;
 import com.jachness.blockcalls.stuff.Util;
@@ -99,7 +100,7 @@ public class NormalizerService {
 
     public String getDisplayNumber(Call call) {
         if (call.isPrivateNumber()) {
-            return call.getDisplayNumber();
+            return context.getString(R.string.common_private);
         } else {
             return PhoneNumberUtil.getInstance().format(call.getNormalizedNumber(), PhoneNumberUtil
                     .PhoneNumberFormat.INTERNATIONAL);

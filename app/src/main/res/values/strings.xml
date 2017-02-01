@@ -111,9 +111,7 @@
     <string name="blocking_service_description">Block calls based on Block Calls App rules</string>
 
     <string name="blocked_number">Blocked number</string>
-    <string name="notification_blocked_ticker">Phone number %s</string>
     <string name="notification_blocked_title">Call blocked</string>
-    <string name="notification_blocked_content">Phone number %s</string>
 
 
     <string name="export_title">Export black list</string>

@@ -67,8 +67,6 @@
     <string name="mainMnItemBlockingSettings">Métodos de bloqueo</string>
     <string name="mainMnItemSettings">Configuración</string>
     <string name="mani_menu_title_add_new">Agregar número</string>
-    <string name="notification_blocked_content">Número de teléfono %s</string>
-    <string name="notification_blocked_ticker">Número de teléfono %s</string>
     <string name="notification_blocked_title">Llamada bloqueada</string>
     <string name="pref_blackList">Lista negra</string>
     <string name="pref_blackListSummary">Bloquear números en la lista negra</string>

@@ -59,7 +59,7 @@
     </string-array>
 
 
-    <string name="common_ok" translatable="false">OK</string>
+    <string name="common_ok">OK</string>
     <string name="common_cancel">Cancel</string>
     <string name="common_delete">Delete</string>
     <string name="common_private">Private number</string>
@@ -107,7 +107,7 @@
     <string name="tag_data" translatable="false">1</string>
     <string name="tag_viewHolder" translatable="false">2</string>
 
-    <string name="blocking_service_started" translatable="false">Block Calls service</string>
+    <string name="blocking_service_started">Block Calls service</string>
     <string name="blocking_service_description">Block calls based on Block Calls App rules</string>
 
     <string name="blocked_number">Blocked number</string>

@@ -147,5 +147,7 @@
     <string name="callLogLabelEmpty">No hay llamadas entrantes</string>
     <string name="contactLabelEmpty">No hay contactos disponibles</string>
     <string name="app_name">Bloquear Llamadas</string>
+    <string name="blocking_service_started">Servicio de Bloquear Llamadas</string>
+    <string name="common_ok">OK</string>
 
 </resources>

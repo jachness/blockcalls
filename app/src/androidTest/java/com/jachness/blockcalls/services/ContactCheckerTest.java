@@ -51,7 +51,7 @@ public class ContactCheckerTest extends AndroidTest {
     }
 
     @Override
-    protected Context getContext() {
+    protected Context getTargetContext() {
         return InstrumentationRegistry.getContext();
     }
 
@@ -65,14 +65,20 @@ public class ContactCheckerTest extends AndroidTest {
         numbersNotMatch.add("6078");
         insertData(numbersMatch, numbersNotMatch);
 
-        AppPreferences sett = new AppPreferences(getContext());
+        AppPreferences sett = new AppPreferences(getTargetContext());
         sett.setAllowOnlyContacts(true);
-        Call call = normalizerService.normalizeCallerID("48556078", "AR");
+
+        Call call = new Call();
+        call.setNumber("48556078");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         int res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.YES, res);
         Assert.assertEquals(BlockOrigin.CONTACTS, call.getBlockOrigin());
 
-        call = normalizerService.normalizeCallerID("99999999", "AR");
+        call.setNumber("99999999");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.YES, res);
         Assert.assertEquals(BlockOrigin.CONTACTS, call.getBlockOrigin());
@@ -93,26 +99,37 @@ public class ContactCheckerTest extends AndroidTest {
         insertData(numbersMatch, numbersNotMatch);
 
         //NOT Allow only contacts (that's means allow any number)
-        AppPreferences sett = new AppPreferences(getContext());
+        AppPreferences sett = new AppPreferences(getTargetContext());
         sett.setAllowOnlyContacts(false);
-        Call call = normalizerService.normalizeCallerID("48556078", "AR");
+
+        Call call = new Call();
+        call.setNumber("48556078");
+        call.setCountryISO("AR");
+
+        normalizerService.normalizeCall(call);
         int res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.NONE, res);
         Assert.assertEquals(null, call.getBlockOrigin());
 
-        call = normalizerService.normalizeCallerID("99999999", "AR");
+        call.setNumber("99999999");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.NONE, res);
         Assert.assertEquals(null, call.getBlockOrigin());
 
         //Allow ONLY contacts
         sett.setAllowOnlyContacts(true);
-        call = normalizerService.normalizeCallerID("48556078", "AR");
+        call.setNumber("48556078");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.NO, res);
         Assert.assertEquals(BlockOrigin.CONTACTS, call.getBlockOrigin());
 
-        call = normalizerService.normalizeCallerID("99999999", "AR");
+        call.setNumber("99999999");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.YES, res);
         Assert.assertEquals(BlockOrigin.CONTACTS, call.getBlockOrigin());
@@ -131,8 +148,10 @@ public class ContactCheckerTest extends AndroidTest {
         numbersNotMatch.add("+5448551234");
         insertData(numbersMatch, numbersNotMatch);
 
-
-        Call call = normalizerService.normalizeCallerID("48556078", "AR");
+        Call call = new Call();
+        call.setNumber("48556078");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
 
         String[] par = contactDAO.findContact(call.getNumber());
         Assert.assertNotNull(par);
@@ -154,7 +173,7 @@ public class ContactCheckerTest extends AndroidTest {
         ops.add(ContentProviderOperation.newDelete(ContactsContract.RawContacts.CONTENT_URI)
                 .build());
         ops.add(ContentProviderOperation.newDelete(ContactsContract.Data.CONTENT_URI).build());
-        getContext().getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
+        getTargetContext().getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
         ops.clear();
         //================
         //Data for matches
@@ -193,7 +212,7 @@ public class ContactCheckerTest extends AndroidTest {
                     .build());
 
         }
-        getContext().getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
+        getTargetContext().getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
         //================
         //Data for NOT matches
         //================
@@ -235,7 +254,7 @@ public class ContactCheckerTest extends AndroidTest {
 
         //================
 
-        getContext().getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
+        getTargetContext().getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
 
     }
 }

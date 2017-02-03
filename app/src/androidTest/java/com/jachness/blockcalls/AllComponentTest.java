@@ -9,6 +9,7 @@ import com.jachness.blockcalls.services.EndCallServiceTest;
 import com.jachness.blockcalls.services.MasterCheckerTest;
 import com.jachness.blockcalls.services.MatcherServiceTest;
 import com.jachness.blockcalls.services.PrivateNumberCheckerTest;
+import com.jachness.blockcalls.services.QuickBlackListCheckerTest;
 import com.jachness.blockcalls.services.ValidatorServiceTest;
 
 import javax.inject.Singleton;
@@ -34,4 +35,6 @@ public interface AllComponentTest {
     void inject(MatcherServiceTest matcherServiceTest);
 
     void inject(EndCallServiceTest endCallServiceTest);
+
+    void inject(QuickBlackListCheckerTest quickBlackListCheckerTest);
 }

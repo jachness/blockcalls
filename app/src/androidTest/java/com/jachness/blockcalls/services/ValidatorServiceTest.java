@@ -29,7 +29,7 @@ public class ValidatorServiceTest extends AndroidTest {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        PreferenceManager.getDefaultSharedPreferences(getContext()).edit().clear().commit();
+        PreferenceManager.getDefaultSharedPreferences(getTargetContext()).edit().clear().commit();
         getComponent().inject(this);
     }
 

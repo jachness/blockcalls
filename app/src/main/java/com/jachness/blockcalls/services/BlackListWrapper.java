@@ -21,15 +21,18 @@ package com.jachness.blockcalls.services;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.jachness.blockcalls.androidService.CallBlockingService;
 import com.jachness.blockcalls.db.BlackListTable;
 import com.jachness.blockcalls.db.dao.BlackListDAO;
 import com.jachness.blockcalls.db.dao.ContactDAO;
 import com.jachness.blockcalls.entities.BlackListNumberEntity;
+import com.jachness.blockcalls.stuff.AppPreferences;
 import com.jachness.blockcalls.stuff.PermUtil;
 
 import hugo.weaving.DebugLog;
@@ -45,15 +48,17 @@ public class BlackListWrapper {
     private final Context context;
     private final ContactDAO contactDAO;
     private final BlackListDAO blackListDAO;
+    private final AppPreferences appPreferences;
 
     public BlackListWrapper(Context context, ValidatorService validatorService, NormalizerService
-            normalizerService, ContactDAO
-                                    contactDAO, BlackListDAO blackListDAO) {
+            normalizerService, ContactDAO contactDAO, BlackListDAO blackListDAO, AppPreferences
+                                    appPreferences) {
         this.context = context;
         this.normalizerService = normalizerService;
         this.validatorService = validatorService;
         this.contactDAO = contactDAO;
         this.blackListDAO = blackListDAO;
+        this.appPreferences = appPreferences;
     }
 
     @DebugLog
@@ -102,12 +107,26 @@ public class BlackListWrapper {
     @DebugLog
     public void delete(BlackListNumberEntity entity) {
         blackListDAO.delete(entity);
+        refreshService();
     }
 
     @DebugLog
     public void updateEnabled(BlackListNumberEntity entity, boolean enabled) {
         blackListDAO.updateEnabled(entity, enabled);
+        refreshService();
     }
 
+    @DebugLog
+    public void deleteAll() {
+        context.getContentResolver().delete(BlackListTable.CONTENT_URI, null, null);
+        refreshService();
+    }
 
+    private void refreshService() {
+        if (appPreferences.isBlockingEnable()) {
+            Intent i = new Intent(context, CallBlockingService.class);
+            i.putExtra(CallBlockingService.DRY, true);
+            context.startService(i);
+        }
+    }
 }

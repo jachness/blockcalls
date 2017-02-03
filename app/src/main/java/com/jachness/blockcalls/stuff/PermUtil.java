@@ -75,7 +75,7 @@ public class PermUtil {
     }
 
     @DebugLog
-    public static boolean checkNotificationPolicyAccess(Context context) {
+    private static boolean checkNotificationPolicyAccess(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return ManagerUtil.getNotificationManager(context).isNotificationPolicyAccessGranted();
         }

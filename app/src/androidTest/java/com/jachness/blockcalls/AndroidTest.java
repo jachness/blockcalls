@@ -13,20 +13,22 @@ import com.jachness.blockcalls.stuff.AppPreferences;
  */
 
 public abstract class AndroidTest {
-    private Context context;
+    private Context targetContext;
     private AllComponentTest component;
     private AppPreferences appPreferences;
+    private Context context;
 
     protected void setUp() throws Exception {
-        context = InstrumentationRegistry.getTargetContext();
-        component = DaggerAllComponentTest.builder().blockModule(new BlockModule(context))
-                .appModule(new AppModule(context))
-                .dAOModule(new DAOModule(context)).build();
-        appPreferences = new AppPreferences(context);
+        targetContext = InstrumentationRegistry.getTargetContext();
+        context = InstrumentationRegistry.getContext();
+        component = DaggerAllComponentTest.builder().blockModule(new BlockModule(targetContext))
+                .appModule(new AppModule(targetContext))
+                .dAOModule(new DAOModule(targetContext)).build();
+        appPreferences = new AppPreferences(targetContext);
     }
 
-    protected Context getContext() {
-        return context;
+    protected Context getTargetContext() {
+        return targetContext;
     }
 
     protected AllComponentTest getComponent() {
@@ -35,5 +37,9 @@ public abstract class AndroidTest {
 
     protected AppPreferences getAppPreferences() {
         return appPreferences;
+    }
+
+    public Context getContext() {
+        return context;
     }
 }

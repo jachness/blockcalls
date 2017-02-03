@@ -31,6 +31,7 @@ import com.jachness.blockcalls.services.MasterChecker;
 import com.jachness.blockcalls.services.MatcherService;
 import com.jachness.blockcalls.services.NormalizerService;
 import com.jachness.blockcalls.services.PrivateNumberChecker;
+import com.jachness.blockcalls.services.QuickBlackListChecker;
 import com.jachness.blockcalls.stuff.AppPreferences;
 
 import javax.inject.Singleton;
@@ -57,10 +58,15 @@ public class BlockModule {
 
     @Provides
     @Singleton
+    QuickBlackListChecker providesQuickBlackListChecker(AppPreferences preferences) {
+        return new QuickBlackListChecker(context, preferences);
+    }
+
+    @Provides
+    @Singleton
     BlackListChecker providesBlackListChecker(AppPreferences preferences, MatcherService
-            matcherService, BlackListDAO
-                                                      blackListDAO) {
-        return new BlackListChecker(preferences, matcherService, blackListDAO);
+            matcherService, BlackListDAO blackListDAO, NormalizerService normalizerService) {
+        return new BlackListChecker(preferences, matcherService, blackListDAO, normalizerService);
     }
 
     @Provides
@@ -72,9 +78,11 @@ public class BlockModule {
     @Provides
     @Singleton
     MasterChecker providesMasterChecker(PrivateNumberChecker privateNumberChecker,
+                                        QuickBlackListChecker quickBlackListChecker,
                                         BlackListChecker blackListChecker,
                                         ContactChecker contactChecker) {
-        return new MasterChecker(privateNumberChecker, blackListChecker, contactChecker);
+        return new MasterChecker(privateNumberChecker, quickBlackListChecker, blackListChecker,
+                contactChecker);
     }
 
     @Provides

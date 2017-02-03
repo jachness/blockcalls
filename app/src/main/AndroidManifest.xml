@@ -50,6 +50,10 @@
             android:name=".db.LogProvider"
             android:authorities="com.jachness.blockcalls.log"
             android:exported="false"/>
+        <provider
+            android:name=".db.QuickBlackListProvider"
+            android:authorities="com.jachness.blockcalls.quickBlackList"
+            android:exported="false"/>
 
         <activity
             android:name=".activities.MainActivity"

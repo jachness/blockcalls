@@ -36,7 +36,7 @@ public final class MatcherServiceTest extends AndroidTest {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        PreferenceManager.getDefaultSharedPreferences(getContext()).edit().clear().commit();
+        PreferenceManager.getDefaultSharedPreferences(getTargetContext()).edit().clear().commit();
         getComponent().inject(this);
     }
 
@@ -145,10 +145,13 @@ public final class MatcherServiceTest extends AndroidTest {
     private boolean isMatch(String callerID, String defaultRegion, String otherNumber) {
         boolean res = false;
         try {
-            Call number = normalizerService.normalizeCallerID(callerID, defaultRegion);
+            Call call = new Call();
+            call.setNumber(callerID);
+            call.setCountryISO(defaultRegion);
+            normalizerService.normalizeCall(call);
             BlackListNumberEntity entity = new BlackListNumberEntity();
             entity.setNormalizedNumber(otherNumber);
-            res = matcherService.isNumberMatch(number, entity);
+            res = matcherService.isNumberMatch(call, entity);
             Log.i(TAG, callerID + " | " + defaultRegion + " | " + otherNumber + " | " + getStrict
                     () + " | [" + res + "]");
 

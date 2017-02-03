@@ -72,8 +72,9 @@ public class AppModule {
     @Provides
     @Singleton
     BlackListWrapper provideBlackListWrapper(ValidatorService validatorService, NormalizerService
-            normalizerService, ContactDAO contactDAO, BlackListDAO blackListDAO) {
+            normalizerService, ContactDAO contactDAO, BlackListDAO blackListDAO, AppPreferences
+                                                     appPreferences) {
         return new BlackListWrapper(context, validatorService, normalizerService, contactDAO,
-                blackListDAO);
+                blackListDAO, appPreferences);
     }
 }

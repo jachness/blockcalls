@@ -60,6 +60,7 @@ import com.jachness.blockcalls.stuff.AppContext;
 import com.jachness.blockcalls.stuff.AppPreferences;
 import com.jachness.blockcalls.stuff.PermUtil;
 import com.jachness.blockcalls.stuff.ToolbarActionItemTarget;
+import com.jachness.blockcalls.stuff.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -179,12 +180,13 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                                     .couch_lesson1_Title4));
 
 
-                            Drawable d = null;
+                            Drawable d;
                             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES
                                     .LOLLIPOP) {
                                 d = getResources().getDrawable(R.drawable.ic_stat_call_blocked,
                                         getTheme());
                             } else {
+                                //noinspection deprecation
                                 d = getResources().getDrawable(R.drawable.ic_stat_call_blocked);
                             }
                             d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
@@ -238,7 +240,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @DebugLog
     protected void onResume() {
         super.onResume();
-        if (appPreferences.isBlockingEnable()) {
+        if (appPreferences.isBlockingEnable() && !Util.isServiceRunning(this, CallBlockingService
+                .class)) {
             if (BuildConfig.DEBUG)
                 Log.d(TAG, "starting " + CallBlockingService.class.getSimpleName());
             Intent i = new Intent(getApplicationContext(), CallBlockingService.class);

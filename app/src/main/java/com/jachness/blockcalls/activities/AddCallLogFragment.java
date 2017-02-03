@@ -24,6 +24,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.CallLog;
 import android.provider.ContactsContract;
@@ -185,8 +186,13 @@ public class AddCallLogFragment extends ListFragment implements LoaderManager
         String exclusionNullNumber = CallLog.Calls.NUMBER + " IS NOT NULL AND " + CallLog.Calls
                 .NUMBER + " <> \'\' AND ";
 
-        String types = CallLog.Calls.OUTGOING_TYPE + "," + CallLog.Calls.VOICEMAIL_TYPE + "," +
-                CallLog.Calls.BLOCKED_TYPE;
+        String types = "" + CallLog.Calls.OUTGOING_TYPE;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            types += "," + CallLog.Calls.VOICEMAIL_TYPE;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            types += "," + CallLog.Calls.BLOCKED_TYPE;
+        }
 
         String exclusionCallType = CallLog.Calls.TYPE + " NOT IN (" + types + ") AND ";
         //See CallLog.Calls.NUMBER_PRESENTATION for this filter

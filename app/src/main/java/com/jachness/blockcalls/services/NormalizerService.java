@@ -21,7 +21,6 @@ package com.jachness.blockcalls.services;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
@@ -30,8 +29,6 @@ import com.jachness.blockcalls.R;
 import com.jachness.blockcalls.exceptions.PhoneNumberException;
 import com.jachness.blockcalls.exceptions.TooShortNumberException;
 import com.jachness.blockcalls.stuff.Util;
-
-import hugo.weaving.DebugLog;
 
 /**
  * Created by jachness on 4/11/2016.
@@ -67,35 +64,31 @@ public class NormalizerService {
         }
     }
 
-    @NonNull
-    Call normalizeCallerID(@NonNull String number, @NonNull String defaultCountryISO) throws
-            PhoneNumberException, TooShortNumberException {
-        if (!TextUtils.isEmpty(number) && number.length() < TooShortNumberException
-                .MINIMUM_LENGTH) {
+    public void normalizeCall(@NonNull Call call) throws PhoneNumberException,
+            TooShortNumberException {
+
+        if (call.isPrivateNumber() || call.getNormalizedNumber() != null) {
+            return;
+        }
+
+        if (call.getCountryISO() == null) {
+            call.setCountryISO(Util.getDeviceCountryISO(context));
+        }
+
+        String number = call.getNumber();
+        if (number.length() < TooShortNumberException.MINIMUM_LENGTH) {
             throw new TooShortNumberException("Too short number: " + number + ". Minimum length" +
                     " is " + TooShortNumberException.MINIMUM_LENGTH);
         }
 
-        Call call = new Call();
-        call.setNumber(number);
-        if (!TextUtils.isEmpty(number)) {
-            try {
-                PhoneNumberUtil.getInstance().parseAndKeepRawInput(number, defaultCountryISO,
-                        holder);
-                call.setNormalizedNumber(holder);
-            } catch (NumberParseException e) {
-                throw new PhoneNumberException("Error parsing number: " + number, e);
-            }
+        try {
+            PhoneNumberUtil.getInstance().parseAndKeepRawInput(number, call.getCountryISO(),
+                    holder);
+            call.setNormalizedNumber(holder);
+        } catch (NumberParseException e) {
+            throw new PhoneNumberException("Error parsing number: " + number, e);
         }
 
-        return call;
-    }
-
-    @NonNull
-    @DebugLog
-    public Call normalizeCallerID(String number) throws PhoneNumberException,
-            TooShortNumberException {
-        return normalizeCallerID(number, Util.getDeviceCountryISO(context));
     }
 
     public String getDisplayNumber(Call call) {

@@ -69,21 +69,28 @@ public class BlackListCheckerTest extends AndroidTest {
         numbersNotMatch.add("+5448551234");
         insertData(numbersMatch, numbersNotMatch);
 
-        AppPreferences sett = new AppPreferences(getContext());
+        AppPreferences sett = new AppPreferences(getTargetContext());
         sett.setEnableBlackList(false);
-        Call call = normalizerService.normalizeCallerID("48556078", "AR");
+        Call call = new Call();
+        call.setNumber("48556078");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         int res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.NONE, res);
         Assert.assertEquals(null, call.getBlockOrigin());
 
 
         sett.setEnableBlackList(true);
-        call = normalizerService.normalizeCallerID("48556078", "AR");
+        call.setNumber("48556078");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.YES, res);
         Assert.assertEquals(BlockOrigin.BLACK_LIST, call.getBlockOrigin());
 
-        call = normalizerService.normalizeCallerID("99999999", "AR");
+        call.setNumber("99999999");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
         res = checker.isBlockable(call);
         Assert.assertEquals(IChecker.NONE, res);
         Assert.assertEquals(null, call.getBlockOrigin());
@@ -102,8 +109,10 @@ public class BlackListCheckerTest extends AndroidTest {
         numbersNotMatch.add("+5448551234");
         insertData(numbersMatch, numbersNotMatch);
 
-
-        Call call = normalizerService.normalizeCallerID("48556078", "AR");
+        Call call = new Call();
+        call.setNumber("48556078");
+        call.setCountryISO("AR");
+        normalizerService.normalizeCall(call);
 
         List<BlackListNumberEntity> list = blackListDAO.findForBlock(call);
         Assert.assertTrue(list.size() > 0);
@@ -121,14 +130,14 @@ public class BlackListCheckerTest extends AndroidTest {
 
     private void insertData(List<String> matches, List<String> notMatches) {
 
-        getContext().getContentResolver().delete(BlackListTable.CONTENT_URI, null, null);
+        getTargetContext().getContentResolver().delete(BlackListTable.CONTENT_URI, null, null);
         for (String num : matches) {
             ContentValues contentValue = new ContentValues();
             contentValue.put(BlackListTable.NORMALIZED_NUMBER, num);
             contentValue.put(BlackListTable.BEGIN_WITH, Boolean.FALSE);
             contentValue.put(BlackListTable.ENABLED, Boolean.TRUE);
 
-            Uri newBlockedNumberUri = getContext().getContentResolver().insert(BlackListTable
+            Uri newBlockedNumberUri = getTargetContext().getContentResolver().insert(BlackListTable
                     .CONTENT_URI, contentValue);
             assertThat(newBlockedNumberUri, is(notNullValue()));
         }
@@ -139,7 +148,7 @@ public class BlackListCheckerTest extends AndroidTest {
             contentValue.put(BlackListTable.BEGIN_WITH, Boolean.FALSE);
             contentValue.put(BlackListTable.ENABLED, Boolean.TRUE);
 
-            Uri newBlockedNumberUri = getContext().getContentResolver().insert(BlackListTable
+            Uri newBlockedNumberUri = getTargetContext().getContentResolver().insert(BlackListTable
                     .CONTENT_URI, contentValue);
             assertThat(newBlockedNumberUri, is(notNullValue()));
         }

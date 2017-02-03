@@ -65,6 +65,7 @@ public class BlockingSettingsActivity extends PreferenceActivity implements Pref
                 if (key.equals(AppPreferences.BLOCKING_ENABLED)) {
                     Intent i = new Intent(BlockingSettingsActivity.this, CallBlockingService.class);
                     if (appContext.getAppPreferences().isBlockingEnable()) {
+                        i.putExtra(CallBlockingService.DRY, true);
                         startService(i);
                     } else {
                         stopService(i);

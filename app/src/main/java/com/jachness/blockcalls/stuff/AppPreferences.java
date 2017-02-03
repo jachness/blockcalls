@@ -34,6 +34,7 @@ public class AppPreferences {
     public static final String ALLOW_ONLY_CONTACTS = "allow_only_contacts_key";
     public static final String BLOCKING_ENABLED = "blocking_enabled";
     public static final String LESSON_1 = "lesson_1";
+    public static final String DEFAULT_QCK = "";
     private static final String BLOCK_PRIVATE_NUMBERS = "block_private_numbers_key";
     private static final String ENABLE_BLACK_LIST = "enable_black_list_key";
     private static final String FIRST_TIME = "first_time_key";
@@ -41,6 +42,7 @@ public class AppPreferences {
     private static final String STRICT_MATCHING = "strict_matching_key";
     private static final String ENABLE_LOG = "enable_log_key";
     private static final String NOTIFICATION_BLOCKED_CALL = "notification_blocked_call";
+    private static final String QUICK = "quick";
     private static final boolean DEFAULT_FIR = true;
     private static final boolean DEFAULT_BUN = false;
     private static final boolean DEFAULT_AOC = false;
@@ -140,17 +142,35 @@ public class AppPreferences {
         set(LESSON_1, enable);
     }
 
+    public String getQuick() {
+        return get(QUICK, DEFAULT_QCK);
+    }
+
+    public void setQuick(String number) {
+        set(QUICK, number);
+    }
 
 
-    @SuppressLint("CommitPrefEdits")
+    @DebugLog
     private void set(String key, boolean value) {
         PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean(key, value)
-                .commit();
+                .apply();
+    }
+
+    @DebugLog
+    private void set(String key, String value) {
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putString(key, value)
+                .apply();
     }
 
     @DebugLog
     private boolean get(String key, boolean defaultValue) {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key, defaultValue);
+    }
+
+    @DebugLog
+    private String get(String key, String defaultValue) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getString(key, defaultValue);
     }
 
     @SuppressLint("CommitPrefEdits")

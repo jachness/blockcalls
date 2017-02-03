@@ -41,9 +41,9 @@ public class MainWrapperTest extends AndroidTest {
 //        when(endCallService.endCall()).thenReturn(true);
 //        when(contactDAO.findContact(Matchers.any(String.class))).thenReturn(null);
 //
-//        BlockWrapper mainWrapper = new BlockWrapper(getContext(), masterChecker,
-//                endCallService, new NormalizerService(getContext()), new AppPreferences
-//                (getContext()));
+//        BlockWrapper mainWrapper = new BlockWrapper(getTargetContext(), masterChecker,
+//                endCallService, new NormalizerService(getTargetContext()), new AppPreferences
+//                (getTargetContext()));
 //
 //        String res = mainWrapper.checkAndBlock(false, "1234");
 //        Log.i(TAG, "Response: " + res);

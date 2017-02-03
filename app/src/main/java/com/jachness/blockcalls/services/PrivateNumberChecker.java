@@ -45,4 +45,14 @@ public class PrivateNumberChecker implements IChecker {
         }
         return IChecker.NONE;
     }
+
+    @Override
+    public void doLast() {
+        //do nothing
+    }
+
+    @Override
+    public void refresh() {
+        //do nothing
+    }
 }

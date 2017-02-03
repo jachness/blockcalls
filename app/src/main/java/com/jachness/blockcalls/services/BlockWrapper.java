@@ -64,7 +64,8 @@ public class BlockWrapper {
     @DebugLog
     public String checkAndBlock(boolean dry, String number) throws TooShortNumberException,
             PhoneNumberException {
-        Call call = normalizerService.normalizeCallerID(number);
+        Call call = new Call();
+        call.setNumber(number);
 
         boolean blockable = masterChecker.isBlockable(call);
         String formattedNumber = null;
@@ -72,10 +73,16 @@ public class BlockWrapper {
             int prev = mute();
             boolean res = endCallService.endCall();
             unMute(prev);
+
+            normalizerService.normalizeCall(call);
             formattedNumber = normalizerService.getDisplayNumber(call);
             if (res && appPreferences.isEnableLog()) {
                 saveLog(call);
             }
+            masterChecker.doLast();
+        }
+        if (dry) {
+            masterChecker.refresh();
         }
         return formattedNumber;
     }
@@ -85,7 +92,7 @@ public class BlockWrapper {
         LogEntity logEntity = new LogEntity();
         logEntity.setCallerID(call.getNumber());
         logEntity.setDisplayNumber(normalizerService.getDisplayNumber(call));
-        if (call.getExtraData() != null && call.getExtraData().containsKey("displayName")) {
+        if (call.getExtraData().containsKey("displayName")) {
             logEntity.setDisplayName(call.getExtraData().get("displayName"));
         }
         logEntity.setTime((new Date()).getTime());

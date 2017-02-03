@@ -19,6 +19,9 @@
 
 package com.jachness.blockcalls.services;
 
+import com.jachness.blockcalls.exceptions.PhoneNumberException;
+import com.jachness.blockcalls.exceptions.TooShortNumberException;
+
 import hugo.weaving.DebugLog;
 
 /**
@@ -28,13 +31,15 @@ import hugo.weaving.DebugLog;
 public class MasterChecker {
     private final IChecker[] checkers;
 
-    public MasterChecker(PrivateNumberChecker privateNumberChecker, BlackListChecker
-            blackListChecker, ContactChecker contactChecker) {
-        this.checkers = new IChecker[]{privateNumberChecker, blackListChecker, contactChecker};
+    public MasterChecker(PrivateNumberChecker privateNumberChecker, QuickBlackListChecker
+            quickBlackListChecker, BlackListChecker blackListChecker, ContactChecker
+                                 contactChecker) {
+        this.checkers = new IChecker[]{privateNumberChecker, quickBlackListChecker,
+                blackListChecker, contactChecker};
     }
 
     @DebugLog
-    public boolean isBlockable(Call call) {
+    public boolean isBlockable(Call call) throws TooShortNumberException, PhoneNumberException {
         for (IChecker checker : checkers) {
             int res = checker.isBlockable(call);
             switch (res) {
@@ -47,5 +52,17 @@ public class MasterChecker {
         return false;
     }
 
+    @DebugLog
+    public void doLast() {
+        for (IChecker checker : checkers) {
+            checker.doLast();
+        }
+    }
 
+    @DebugLog
+    public void refresh() {
+        for (IChecker checker : checkers) {
+            checker.refresh();
+        }
+    }
 }

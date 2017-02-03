@@ -17,23 +17,27 @@
  * along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.jachness.blockcalls.services;
+package com.jachness.blockcalls.db;
 
-import com.jachness.blockcalls.exceptions.PhoneNumberException;
-import com.jachness.blockcalls.exceptions.TooShortNumberException;
+import android.net.Uri;
 
 /**
- * Created by jachness on 11/11/2016.
+ * Created by jachness on 2/2/2017.
  */
 
-public interface IChecker {
-    int YES = 0;
-    int NO = 1;
-    int NONE = 2;
+public class QuickBlackListTable {
+    public static final String RELATIVE_PATH = "quickBlackList";
+    public static final String TABLE = "quick_black_list";
 
-    int isBlockable(Call call) throws TooShortNumberException, PhoneNumberException;
+    public static final String UID = "_id";
+    public static final String CALLER_ID = "caller_id";
 
-    void doLast();
+    public static final Uri CONTENT_URI = Uri.parse("content://" + QuickBlackListProvider
+            .AUTHORITY + "/" +
+            RELATIVE_PATH);
 
-    void refresh();
+    public static final String CONTENT_TYPE = "vnd.android.cursor.dir/" + RELATIVE_PATH;
+    public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/" + RELATIVE_PATH;
+
+    public static final int SSID_PATH_POSITION = 1;
 }

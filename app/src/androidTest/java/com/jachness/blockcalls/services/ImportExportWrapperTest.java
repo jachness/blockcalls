@@ -52,7 +52,7 @@ public class ImportExportWrapperTest extends AndroidTest {
         when(blackListWrapper.addNumberToBlackList(Matchers.any(String.class), Matchers.any
                 (String.class), Matchers.any(Boolean.class))).thenReturn(1);
 
-        ImportExportWrapper wrapper = new ImportExportWrapper(getContext(), blackListWrapper);
+        ImportExportWrapper wrapper = new ImportExportWrapper(getTargetContext(), blackListWrapper);
         try {
             wrapper.importBlackList(null);
             Assert.fail("Should have had throw FileException exception");

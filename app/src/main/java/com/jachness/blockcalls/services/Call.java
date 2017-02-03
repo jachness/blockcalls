@@ -24,6 +24,7 @@ import android.text.TextUtils;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.jachness.blockcalls.stuff.BlockOrigin;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -31,11 +32,11 @@ import java.util.Map;
  */
 public class Call {
     public static final String PRIVATE_NUMBER = "private";
-
+    private final Map<String, String> extraData = new HashMap<>();
     private String number;
     private BlockOrigin blockOrigin;
     private PhoneNumber normalizedNumber;
-    private Map<String, String> extraData;
+    private String countryISO;
 
     public BlockOrigin getBlockOrigin() {
         return blockOrigin;
@@ -69,15 +70,12 @@ public class Call {
         return extraData;
     }
 
-    public void setExtraData(Map<String, String> extraData) {
-        this.extraData = extraData;
+    public String getCountryISO() {
+        return countryISO;
     }
 
-    public String getDisplayNumber() {
-        if (this.isPrivateNumber()) {
-            return PRIVATE_NUMBER;
-        }
-        return getNumber();
+    public void setCountryISO(String countryISO) {
+        this.countryISO = countryISO;
     }
 
     @Override
@@ -87,6 +85,7 @@ public class Call {
                 ", number='" + number + '\'' +
                 ", normalizedNumber=" + normalizedNumber +
                 ", extraData=" + extraData +
+                ", countryISO='" + countryISO + '\'' +
                 '}';
     }
 }

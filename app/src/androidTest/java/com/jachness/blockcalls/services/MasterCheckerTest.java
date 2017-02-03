@@ -7,6 +7,7 @@ import com.jachness.blockcalls.exceptions.PhoneNumberException;
 import com.jachness.blockcalls.exceptions.TooShortNumberException;
 import com.jachness.blockcalls.stuff.AppPreferences;
 import com.jachness.blockcalls.stuff.BlockOrigin;
+import com.jachness.blockcalls.stuff.Util;
 
 import junit.framework.Assert;
 
@@ -40,18 +41,23 @@ public class MasterCheckerTest extends AndroidTest {
     @Test
     public void test() {
         try {
-            Call call = normalizerService.normalizeCallerID("");
+            Call call = new Call();
+            call.setNumber("");
+            call.setCountryISO(Util.getDeviceCountryISO(getTargetContext()));
+            normalizerService.normalizeCall(call);
 
             Assert.assertFalse(checker.isBlockable(call));
             Assert.assertEquals(null, call.getBlockOrigin());
 
-            AppPreferences sett = new AppPreferences(getContext());
+            AppPreferences sett = new AppPreferences(getTargetContext());
             sett.setBlockPrivateNumbers(true);
 
             Assert.assertTrue(checker.isBlockable(call));
             Assert.assertEquals(BlockOrigin.PRIVATE, call.getBlockOrigin());
 
-            call = normalizerService.normalizeCallerID("1154914711");
+            call.setNumber("1154914711");
+            call.setCountryISO(Util.getDeviceCountryISO(getTargetContext()));
+            normalizerService.normalizeCall(call);
             Assert.assertFalse(checker.isBlockable(call));
             Assert.assertEquals(null, call.getBlockOrigin());
 

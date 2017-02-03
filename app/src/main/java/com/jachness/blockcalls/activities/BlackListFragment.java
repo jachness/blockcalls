@@ -188,8 +188,7 @@ public class BlackListFragment extends ListFragment implements LoaderManager
                         () {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        getActivity().getContentResolver().delete(BlackListTable.CONTENT_URI,
-                                null, null);
+                        appContext.getBlackListWrapper().deleteAll();
                     }
                 });
                 builder.setNegativeButton(R.string.common_cancel, new DialogInterface

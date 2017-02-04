@@ -105,6 +105,13 @@
             android:name=".activities.TocActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".activities.SendLogActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jachness.blockcalls.activities.AllSettingsActivity"/>
+        </activity>
 
     </application>
 

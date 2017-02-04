@@ -18,7 +18,7 @@
   ~ along with Block Calls. If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="addManualLabelExplanationBeginWith">(bloquear todos los número de teléfono que comienzan con este número)</string>
     <string name="addManualLabelPhoneNumbers">Numero de teléfono</string>
     <string name="addManualMsnFailed">El número de teléfono ya existe</string>
@@ -147,5 +147,7 @@
     <string name="app_name">Bloquear Llamadas</string>
     <string name="blocking_service_started">Servicio de Bloquear Llamadas</string>
     <string name="common_ok">OK</string>
+    <string name="pref_submit_log">Enviar registro de depuración</string>
+    <string name="send_log_chooser" tools:ignore="TypographyEllipsis">Enviar registro de depuración por correo...</string>
 
 </resources>

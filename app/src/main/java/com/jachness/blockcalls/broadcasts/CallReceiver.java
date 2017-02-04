@@ -54,7 +54,6 @@ public class CallReceiver extends BroadcastReceiver {
 
                     Log.i(TAG, "Incoming number: {" + incomingNumber + "}");
                     if (DEBUG) {
-                        Log.d(TAG, "Ringing number: " + incomingNumber);
                         Log.d(TAG, "Running " + CallBlockingService.class.getSimpleName() + ": " +
                                 Util.isServiceRunning(context, CallBlockingService.class));
                     }

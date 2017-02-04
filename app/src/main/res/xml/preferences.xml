@@ -54,4 +54,8 @@
             android:targetClass="com.jachness.blockcalls.activities.TocActivity"
             android:targetPackage="com.jachness.blockcalls"/>
     </Preference>
+
+    <Preference
+        android:key="pref_submit_debug_logs"
+        android:title="@string/pref_submit_log"/>
 </PreferenceScreen>

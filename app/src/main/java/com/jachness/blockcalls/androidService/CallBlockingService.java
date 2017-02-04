@@ -98,12 +98,13 @@ public class CallBlockingService extends Service {
         if (intent.getExtras().containsKey(DRY)) {
             //Dry: Do nothing but runs one time just to let the blockWrapper be "ready" for the
             // next call
+            String numberExample = Util.getNumberExample(getApplicationContext());
             try {
-                blockWrapper.checkAndBlock(true, Util.getNumberExample(getApplicationContext()));
+                blockWrapper.checkAndBlock(true, numberExample);
             } catch (TooShortNumberException e) {
-                //do nothing
+                Log.w(TAG, "(dry) number example: " + numberExample, e);
             } catch (PhoneNumberException e) {
-                //do nothing
+                Log.w(TAG, "(dry) number example: " + numberExample, e);
             }
             return Service.START_STICKY;
         }
@@ -137,7 +138,7 @@ public class CallBlockingService extends Service {
             } catch (PhoneNumberException e) {
                 Log.e(TAG, "Incoming number: {" + incomingNumber + "}", e);
             } catch (TooShortNumberException e) {
-                //do nothing
+                Log.w(TAG, "Incoming number: {" + incomingNumber + "}", e);
             }
         }
 

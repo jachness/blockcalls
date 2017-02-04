@@ -19,10 +19,15 @@
 
 package com.jachness.blockcalls.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.jachness.blockcalls.R;
 import com.jachness.blockcalls.stuff.AppContext;
@@ -32,14 +37,31 @@ import com.jachness.blockcalls.stuff.AppPreferences;
  * Created by jachness on 14/11/2016.
  */
 
-@SuppressWarnings("deprecation")
+
 public class AllSettingsActivity extends PreferenceActivity {
+    private static final String TAG = AllSettingsActivity.class.getSimpleName();
     private SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //noinspection deprecation
         addPreferencesFromResource(R.xml.preferences);
+
+        @SuppressWarnings("deprecation") Preference submitDebugLog = this.findPreference
+                ("pref_submit_debug_logs");
+
+        submitDebugLog.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                final Intent intent = new Intent(AllSettingsActivity.this, SendLogActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
+        submitDebugLog.setSummary(getVersion());
+
 
         preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
@@ -57,6 +79,7 @@ public class AllSettingsActivity extends PreferenceActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        //noinspection deprecation
         getPreferenceScreen().getSharedPreferences()
                 .registerOnSharedPreferenceChangeListener(preferenceChangeListener);
     }
@@ -64,7 +87,23 @@ public class AllSettingsActivity extends PreferenceActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        //noinspection deprecation
         getPreferenceScreen().getSharedPreferences()
                 .unregisterOnSharedPreferenceChangeListener(preferenceChangeListener);
+    }
+
+
+    @NonNull
+    private String getVersion() {
+        try {
+            String app = this.getString(R.string.app_name);
+            String version = this.getPackageManager().getPackageInfo(this.getPackageName(),
+                    0).versionName;
+
+            return String.format("%s %s", app, version);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w(TAG, e);
+            return this.getString(R.string.app_name);
+        }
     }
 }

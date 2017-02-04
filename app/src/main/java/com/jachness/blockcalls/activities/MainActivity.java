@@ -129,6 +129,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         if (appPreferences.isFirstTime()) {
             appPreferences.setAllDefaults();
             appPreferences.setFirstTime(false);
+
+            Intent i = new Intent(getApplicationContext(), CallBlockingService.class);
+            i.putExtra(CallBlockingService.DRY, true);
+            startService(i);
         }
 
     }

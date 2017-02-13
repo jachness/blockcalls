@@ -87,8 +87,8 @@ public class BlockModule {
 
     @Provides
     @Singleton
-    MatcherService providerMatcherService(AppPreferences preferences) {
-        return new MatcherService(preferences);
+    MatcherService providerMatcherService() {
+        return new MatcherService();
     }
 
     @Provides

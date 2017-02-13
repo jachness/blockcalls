@@ -23,7 +23,6 @@ import android.support.annotation.NonNull;
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.jachness.blockcalls.entities.BlackListNumberEntity;
-import com.jachness.blockcalls.stuff.AppPreferences;
 
 import hugo.weaving.DebugLog;
 
@@ -36,11 +35,6 @@ public class MatcherService {
     private static final int NO_MATCH = 0;
     private static final int SOFT_MATCH = 1;
     private static final int STRICT_MATCH = 2;
-    private final AppPreferences appPreferences;
-
-    public MatcherService(AppPreferences appPreferences) {
-        this.appPreferences = appPreferences;
-    }
 
     @DebugLog
     @SuppressWarnings("SimplifiableIfStatement")
@@ -55,12 +49,8 @@ public class MatcherService {
             return true;
         }
 
-        boolean strictMatching = appPreferences.isStrictMatching();
         int res = check(call, blackListNumberEntity.getNormalizedNumber());
-        if (strictMatching && res == STRICT_MATCH) {
-            return true;
-        }
-        return !strictMatching && (res == SOFT_MATCH || res == STRICT_MATCH);
+        return res == SOFT_MATCH || res == STRICT_MATCH;
     }
 
     @DebugLog

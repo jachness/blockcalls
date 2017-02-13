@@ -27,7 +27,7 @@
     <string name="addManualTitle">Ingresar número</string>
     <string name="blackListDeleteAll">Todos los números en la lista negra</string>
     <string name="blackListMnItemDeleteAll">Borrar todo</string>
-    <string name="blackListMnItemExport">Exportar a archivo</string>
+    <string name="blackListMnItemExport">Guardar a archivo</string>
     <string name="blackListMnItemImport">Importar desde archivo</string>
     <string name="blocked_number">Número blockeado</string>
     <string name="blocking_service_description">Bloquear llamadas de teléfono</string>
@@ -52,9 +52,9 @@
     <string name="enum_block_method_contacts">Contactos</string>
     <string name="enum_block_method_private_number">Privado</string>
     <string name="export_already_exist_message">El archivo de lista negra ya existe. ¿Quiere sobreescribirlo?</string>
-    <string name="export_progress_bar_message">Exportar a archivo</string>
+    <string name="export_progress_bar_message">Guardando a archivo</string>
     <string name="export_success_message">El archivo fue grabado:\n %s</string>
-    <string name="export_title">Exportar lista negra</string>
+    <string name="export_title">Guardar lista negra</string>
     <string name="import_message_quantity_zero">No se han importado números de teléfono</string>
     <string name="import_progress_bar_message">Importando números de teléfono</string>
     <string name="import_title">Importar lista negra</string>
@@ -72,7 +72,6 @@
     <string name="pref_blackListSummary">Bloquear números en la lista negra</string>
     <string name="pref_blockingEnable">Habilitar bloqueo</string>
     <string name="pref_blockingEnableSummary">Habilitar o deshabilitar todos los métodos de bloqueo</string>
-    <string name="pref_cat_advance">Configuración avanzada</string>
     <string name="pref_cat_blocking_methods">Todos los métodos de bloqueo</string>
     <string name="pref_cat_blocking_status">Estado de bloqueo</string>
     <string name="pref_contactsOnly">Solo contactos</string>
@@ -83,8 +82,6 @@
     <string name="pref_notStatusBarSummary">Mostrar notificaciones de bloqueo de llamadas</string>
     <string name="pref_privateNumber">Números privados</string>
     <string name="pref_privateNumberSummary">Bloquear números privados</string>
-    <string name="pref_strictMatching">Comparación estricta para la lista negra</string>
-    <string name="pref_strictMatchingSummary">Si una llamada fue bloqueada incorrectamente (debido a la falta del código de área), habilite esto para asegurar una comparación estricta de números de teléfono</string>
     <string name="pref_title_blocking">Bloqueo</string>
     <string name="pref_title_log">Registro de llamadas bloqueadas</string>
     <string name="pref_title_main">Configuración</string>
@@ -137,9 +134,9 @@
     <string name="couch_lesson1_Detail4">La próxima vez que te llamen desde un número registrado en la lista negra, la app bloqueará la llamada y aparecerá el siguiente ícono @ en la barra de notificación. Así sabrás que una llamada fue bloqueada por la app.</string>
     <string name="couch_lesson1_Title5">Más posibilidades de bloqueo</string>
     <string name="couch_lesson1_Detail5">En este ícono encontrarás más opciones de bloqueo. Por ejemplo, bloquear todas las llamadas privadas o solo admitir llamadas que estén registrados en tus contactos.</string>
-    <string name="pref_title_tutorial">Tutorial</string>
-    <string name="pref_lesson_1">Tutorial básico</string>
-    <string name="pref_lesson_1_Summary">Volver a tomar el tutorial básico</string>
+    <string name="pref_title_tutorial">Tutoriales</string>
+    <string name="pref_lesson_1">Tutorial introductorio</string>
+    <string name="pref_lesson_1_Summary">Bloquear llamadas por método de lista negra</string>
     <string name="logLabelEmpty">Aún no han habido llamadas bloqueadas</string>
     <string name="blackListLabelEmpty">La lista negra está vacía.\n Toque el botón + para agregar un número de teléfono.</string>
     <string name="callLogLabelEmpty">No hay llamadas entrantes</string>

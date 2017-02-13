@@ -74,7 +74,6 @@
     <string name="common_next">Next</string>
 
 
-    <string name="pref_cat_advance">Advance configuration</string>
     <string name="pref_privateNumber">Private numbers</string>
     <string name="pref_privateNumberSummary">Block private numbers</string>
     <string name="pref_blackList">Black list</string>
@@ -83,8 +82,6 @@
     <string name="pref_contactsOnly">Contacts only</string>
     <string name="pref_contactsOnlySummary">Block all numbers except contacts</string>
     <string name="pref_title_blocking">Blocking</string>
-    <string name="pref_strictMatching">Strict matching for black list</string>
-    <string name="pref_strictMatchingSummary">If phone calls are been blocked incorrectly (due to the lack of area code), enable this to ensure the exact match of phone numbers</string>
     <string name="pref_title_log">Blocked call registry</string>
     <string name="pref_log">Register</string>
     <string name="pref_logSummary">Register all blocked phone numbers</string>
@@ -114,10 +111,10 @@
     <string name="notification_blocked_title">Call blocked</string>
 
 
-    <string name="export_title">Export black list</string>
+    <string name="export_title">Save black list</string>
     <string name="export_success_message">File has been saved:\n %s</string>
     <string name="export_already_exist_message">The black list file already exist. Do you want to override it?</string>
-    <string name="export_progress_bar_message">Exporting to file</string>
+    <string name="export_progress_bar_message">Saving to file</string>
 
 
     <string name="import_title">Import black list</string>
@@ -136,7 +133,7 @@
     <string name="common_async_task_canceled">The process was canceled. Please, try again.</string>
     <string name="import_progress_bar_message">Importing phone numbers</string>
 
-    <string name="blackListMnItemExport">Export to file</string>
+    <string name="blackListMnItemExport">Save to file</string>
     <string name="blackListMnItemImport">Import from file</string>
     <string name="blackListMnItemDeleteAll">Delete all</string>
     <string name="addManualLabelExplanationBeginWith">(block all phone numbers beginning with this number)</string>
@@ -165,9 +162,9 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="addManualErrorEmpty">Phone number is empty</string>
     <string name="addManualErrorInvalid">Phone number is invalid</string>
 
-    <string name="pref_lesson_1">Basic tutorial</string>
-    <string name="pref_lesson_1_Summary">Restart basic tutorial</string>
-    <string name="pref_title_tutorial">Tutorial</string>
+    <string name="pref_lesson_1">Getting started tutorial</string>
+    <string name="pref_lesson_1_Summary">Block calls by black list method</string>
+    <string name="pref_title_tutorial">Tutorials</string>
     <string name="couch_lesson1_Title4">Done!</string>
     <string name="couch_lesson1_Title5">More blocking options</string>
     <string name="couch_lesson1_Title2">Black list</string>

@@ -30,13 +30,18 @@
             android:exported="false">
         </service>
 
-        <receiver android:name=".broadcasts.WakeUpReceiver">
+        <receiver
+            android:name=".broadcasts.WakeUpReceiver"
+            android:enabled="true"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".broadcasts.CallReceiver">
+            android:name=".broadcasts.CallReceiver"
+            android:enabled="true"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE"/>
             </intent-filter>

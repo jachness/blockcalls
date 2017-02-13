@@ -35,6 +35,7 @@ public class AppPreferences {
     public static final String BLOCKING_ENABLED = "blocking_enabled";
     public static final String LESSON_1 = "lesson_1";
     public static final String DEFAULT_QCK = "";
+    private static final String PROTECTED_APPS_MESSAGE = "protected_apps_message";
     private static final String BLOCK_PRIVATE_NUMBERS = "block_private_numbers_key";
     private static final String ENABLE_BLACK_LIST = "enable_black_list_key";
     private static final String FIRST_TIME = "first_time_key";
@@ -53,6 +54,7 @@ public class AppPreferences {
     private static final boolean DEFAULT_NBC = true;
     private static final boolean DEFAULT_FTPP = true;
     private static final boolean DEFAULT_L1 = false;
+    private static final boolean DEFAULT_PAM = true;
     private final Context context;
 
     public AppPreferences(Context context) {
@@ -148,6 +150,14 @@ public class AppPreferences {
 
     public void setQuick(String number) {
         set(QUICK, number);
+    }
+
+    public boolean isShowProtectedAppsMessage() {
+        return get(PROTECTED_APPS_MESSAGE, DEFAULT_PAM);
+    }
+
+    public void setShowProtectedAppsMessage(boolean show) {
+        set(PROTECTED_APPS_MESSAGE, show);
     }
 
 

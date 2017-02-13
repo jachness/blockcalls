@@ -21,10 +21,13 @@ package com.jachness.blockcalls.stuff;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Build;
+
+import java.util.List;
 
 import hugo.weaving.DebugLog;
 
@@ -82,14 +85,29 @@ public class PermUtil {
         return true;
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
-    @DebugLog
-    public static boolean[] checkInitialPermissions(Context context) {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M) {
-            return new boolean[]{checkCallPhone(context), true};
-        }
-        //Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
-        return new boolean[]{checkCallPhone(context), checkNotificationPolicyAccess(context)};
 
+    @DebugLog
+    public static boolean[] checkInitialPermissions(AppContext context) {
+        return new boolean[]{checkCallPhone(context), checkNotificationPolicyAccess(context),
+                checkProtectedApps(context)};
     }
+
+    /**
+     * This is for Huawei phones. It has built in a "feature" called Protected Apps, that can be
+     * accessed from the phone settings (Battery Manager > Protected Apps). This allows elected
+     * apps to keep running after the screen is turned off.
+     */
+    private static boolean checkProtectedApps(AppContext context) {
+        if (context.getAppPreferences().isShowProtectedAppsMessage()) {
+            Intent intent = new Intent();
+            intent.setClassName("com.huawei.systemmanager", "com.huawei.systemmanager.optimize" +
+                    ".process.ProtectActivity");
+            List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent,
+                    PackageManager.MATCH_DEFAULT_ONLY);
+            return list.size() == 0;
+        }
+        return true;
+    }
+
+
 }

@@ -31,6 +31,8 @@ import android.database.Cursor;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.telephony.TelephonyManager;
+import android.text.Html;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -230,6 +232,15 @@ public class Util {
         } catch (IOException ioe) {
             Log.w(TAG, "IOException when trying to read logcat.", ioe);
             return "Exception grabbing logcat";
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    public static Spanned fromHtml(String html) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(html, Html.FROM_HTML_MODE_COMPACT);
+        } else {
+            return Html.fromHtml(html);
         }
     }
 }

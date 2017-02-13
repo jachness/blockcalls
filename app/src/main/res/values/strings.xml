@@ -141,13 +141,13 @@
     <string name="mainMnItemBlockingSettings">Blocking methods</string>
 
     <string name="initial_permissions_settings">App settings</string>
-    <string name="initial_permissions_message_0">Please, allow <font
-        color='#ffd740'>Manage Phone Calls</font> and <font
-        color='#ffd740'>Do Not Disturb</font> to this app, in order to effectively block phone calls.</string>
-    <string name="initial_permissions_message_1">Please, allow <font
-        color='#ffd740'>Manage Phone Calls</font> to this app, in order to effectively block phone calls.</string>
-    <string name="initial_permissions_message_2">Please, allow <font
-        color='#ffd740'>Do Not Disturb</font> to this app, in order to effectively block phone calls.</string>
+    <string name="initial_permissions_message_0"><![CDATA[Please, allow <font
+        color="#ffd740">Manage Phone Calls</font> and <font
+        color="#ffd740">Do Not Disturb</font> to this app, in order to effectively block phone calls.]]></string>
+    <string name="initial_permissions_message_1"><![CDATA[Please, allow <font
+        color="#ffd740">Manage Phone Calls</font> to this app, in order to effectively block phone calls.]]></string>
+    <string name="initial_permissions_message_2"><![CDATA[Please, allow <font
+        color="#ffd740">Do Not Disturb</font> to this app, in order to effectively block phone calls.]]></string>
 
     <string name="privacy_policy_information_collected_text" translatable="false">Block Calls application does not collect any kind of information including personal identification information, period.\n\nBlock Calls application does not establish any network connection to Internet in any way. Because of that, there is neither banner advertisements nor mobile analytics.</string>
     <string name="privacy_policy_providers_text" translatable="false">Block Calls application is distributed through Google Play Store. Google may provide information about you in certain circumstances; for example, reports to diagnose and fix Block Calls issues.</string>
@@ -184,6 +184,10 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="support_email_subject" translatable="false">Debug log</string>
     <string name="send_log_chooser"
             tools:ignore="TypographyEllipsis">Send debug log by email...</string>
+    <string name="common_allow">Allow</string>
+    <string
+        name="initial_permissions_message_protected_apps"><![CDATA[Please, allow <font color="#ffd740">%s</font> into <font color="#ffd740">Protected Apps</font> to keep running after the screen is turned off.]]></string>
+
 
 </resources>
 

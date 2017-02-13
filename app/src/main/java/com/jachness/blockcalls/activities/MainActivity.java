@@ -91,9 +91,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            boolean[] results = PermUtil.checkInitialPermissions(this);
-            if (!results[0] || !results[1]) {
+
+        boolean[] allowPermissions = PermUtil.checkInitialPermissions((AppContext)
+                getApplicationContext());
+        for (boolean allow : allowPermissions) {
+            if (!allow) {
                 Intent newActivity = new Intent(this, InitialPermissionsActivity.class);
                 startActivity(newActivity);
                 finish();

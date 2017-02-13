@@ -58,10 +58,12 @@
     <string name="import_message_quantity_zero">No se han importado números de teléfono</string>
     <string name="import_progress_bar_message">Importando números de teléfono</string>
     <string name="import_title">Importar lista negra</string>
-    <string name="initial_permissions_message_0">Por favor, permita <font color="#ffd740">Administrar Llamadas de Teléfono</font> y <font
-        color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
-    <string name="initial_permissions_message_1">Por favor, permita <font color="#ffd740">Administrar Llamadas de Teléfono</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
-    <string name="initial_permissions_message_2">Por favor, permita <font color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.</string>
+    <string name="initial_permissions_message_0"><![CDATA[Por favor, permita <font color="#ffd740">Administrar Llamadas de Teléfono</font> y <font
+        color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.]]></string>
+    <string
+        name="initial_permissions_message_1"><![CDATA[Por favor, permita <font color="#ffd740">Administrar Llamadas de Teléfono</font> a esta aplicación, para posibilitar el bloqueo de llamadas.]]></string>
+    <string
+        name="initial_permissions_message_2"><![CDATA[Por favor, permita <font color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.]]></string>
     <string name="initial_permissions_settings">Configurar aplicación</string>
     <string name="logDeleteAll">Todos los registros de llamadas bloqueadas</string>
     <string name="mainMnItemBlockingSettings">Métodos de bloqueo</string>
@@ -146,5 +148,8 @@
     <string name="common_ok">OK</string>
     <string name="pref_submit_log">Enviar registro de depuración</string>
     <string name="send_log_chooser" tools:ignore="TypographyEllipsis">Enviar registro de depuración por correo...</string>
+    <string name="common_allow">Permitir</string>
+    <string
+        name="initial_permissions_message_protected_apps"><![CDATA[Por favor, permita <font color="#ffd740">%s</font> en <font color="#ffd740">Aplicaciones Protegidas</font> para ejecutarse con la pantalla apagada.]]></string>
 
 </resources>

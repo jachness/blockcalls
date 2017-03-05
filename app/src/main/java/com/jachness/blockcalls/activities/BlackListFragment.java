@@ -45,6 +45,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.SwitchCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,8 +54,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -86,7 +86,7 @@ public class BlackListFragment extends ListFragment implements LoaderManager
     private BlackListAdapter mAdapter;
     private View.OnClickListener enableListener;
     private AppContext appContext;
-    private AdapterView.OnItemLongClickListener deleteListener;
+    private View.OnClickListener deleteListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -107,15 +107,15 @@ public class BlackListFragment extends ListFragment implements LoaderManager
         setListAdapter(mAdapter);
         getLoaderManager().initLoader(0, null, this);
 
-        deleteListener = new AdapterView.OnItemLongClickListener() {
+        deleteListener = new View.OnClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long
-                    id) {
-                final BlackListNumberEntity entity = (BlackListNumberEntity) view.getTag(R.string
-                        .tag_data);
+            public void onClick(View v) {
+                final BlackListNumberEntity entity = (BlackListNumberEntity) v.getTag();
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), 0);
                 builder.setTitle(R.string.common_delete);
-                builder.setMessage(entity.getDisplayNumber());
+                builder.setMessage((TextUtils.isEmpty(entity.getDisplayName()) ? entity
+                        .getDisplayNumber() : entity.getDisplayName()));
                 builder.setPositiveButton(R.string.common_ok, new DialogInterface.OnClickListener
                         () {
                     @Override
@@ -130,7 +130,6 @@ public class BlackListFragment extends ListFragment implements LoaderManager
                     }
                 });
                 builder.show();
-                return true;
             }
         };
 
@@ -139,20 +138,15 @@ public class BlackListFragment extends ListFragment implements LoaderManager
             @Override
             public void onClick(View v) {
                 final BlackListNumberEntity entity = (BlackListNumberEntity) v.getTag();
-                appContext.getBlackListWrapper().updateEnabled(entity, ((CheckBox) v).isChecked());
+                appContext.getBlackListWrapper().updateEnabled(entity, ((SwitchCompat) v).isChecked());
             }
         };
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        getListView().setOnItemLongClickListener(deleteListener);
-    }
-
-    @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        String sort = "CASE begin_with WHEN 0 THEN substr(" + BlackListTable.NORMALIZED_NUMBER +
+        String sort = BlackListTable.DISPLAY_NAME + ", CASE begin_with WHEN 0 THEN substr(" +
+                BlackListTable.NORMALIZED_NUMBER +
                 ", 2, 100) ELSE " + BlackListTable.NORMALIZED_NUMBER + " END";
         return new CursorLoader(getActivity(), BlackListTable.CONTENT_URI,
                 null, null, null, sort);
@@ -369,7 +363,8 @@ public class BlackListFragment extends ListFragment implements LoaderManager
                 holder = new ViewHolder();
                 holder.displayName = (TextView) view.findViewById(R.id.blackListLabelName);
                 holder.number = (TextView) view.findViewById(R.id.blackListLabelNumber);
-                holder.enable = (CheckBox) view.findViewById(R.id.blackListCbEnabled);
+                holder.enable = (SwitchCompat) view.findViewById(R.id.blackListCbEnabled);
+                holder.delete = (ImageView) view.findViewById(R.id.blackListIvDelete);
                 view.setTag(R.string.tag_viewHolder, holder);
             }
 
@@ -390,12 +385,15 @@ public class BlackListFragment extends ListFragment implements LoaderManager
             holder.enable.setOnClickListener(null);
             holder.enable.setChecked(phoneNumber.isEnabled());
             holder.enable.setOnClickListener(enableListener);
+            holder.delete.setTag(phoneNumber);
+            holder.delete.setOnClickListener(deleteListener);
         }
 
         class ViewHolder {
             TextView number;
             TextView displayName;
-            CheckBox enable;
+            SwitchCompat enable;
+            ImageView delete;
         }
     }
 

@@ -19,6 +19,7 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
@@ -26,8 +27,17 @@
               android:paddingBottom="@dimen/list_vertical_padding"
               android:paddingTop="@dimen/list_vertical_padding">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/blackListIvDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:layout_margin="0dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        app:srcCompat="@drawable/ic_delete"/>
 
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
@@ -54,11 +64,13 @@
             tools:text="+1 123 4567 9876 5345345"/>
     </LinearLayout>
 
-    <CheckBox
+    <android.support.v7.widget.SwitchCompat
         android:id="@+id/blackListCbEnabled"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:clickable="true"
-        android:focusable="false"/>
+        android:focusable="false"
+        android:text=""/>
+
 </LinearLayout>

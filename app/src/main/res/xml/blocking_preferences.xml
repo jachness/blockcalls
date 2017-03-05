@@ -21,35 +21,55 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-        <PreferenceCategory
-            android:persistent="false"
-            android:title="@string/pref_cat_blocking_status">
-            <CheckBoxPreference
-                android:key="blocking_enabled"
-                android:summary="@string/pref_blockingEnableSummary"
-                android:title="@string/pref_blockingEnable"/>
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:persistent="false"
+        android:title="@string/pref_cat_blocking_status">
+        <CheckBoxPreference
+            android:key="blocking_enabled"
+            android:summary="@string/pref_blockingEnableSummary"
+            android:title="@string/pref_blockingEnable"/>
+    </PreferenceCategory>
 
-        <PreferenceCategory
-            android:dependency="blocking_enabled"
-            android:persistent="false"
-            android:title="@string/pref_cat_blocking_methods">
+    <PreferenceCategory
+        android:dependency="blocking_enabled"
+        android:persistent="false"
+        android:title="@string/pref_cat_blocking_methods">
 
-            <CheckBoxPreference
-                android:key="enable_black_list_key"
-                android:summary="@string/pref_blackListSummary"
-                android:title="@string/pref_blackList"/>
+        <CheckBoxPreference
+            android:key="enable_black_list_key"
+            android:summary="@string/pref_blackListSummary"
+            android:title="@string/pref_blackList"/>
 
-            <CheckBoxPreference
-                android:key="allow_only_contacts_key"
-                android:summary="@string/pref_contactsOnlySummary"
-                android:title="@string/pref_contactsOnly"/>
+        <CheckBoxPreference
+            android:key="allow_only_contacts_key"
+            android:summary="@string/pref_contactsOnlySummary"
+            android:title="@string/pref_contactsOnly"/>
 
-            <CheckBoxPreference
-                android:key="block_private_numbers_key"
-                android:summary="@string/pref_privateNumberSummary"
-                android:title="@string/pref_privateNumber"/>
+        <CheckBoxPreference
+            android:key="block_private_numbers_key"
+            android:summary="@string/pref_privateNumberSummary"
+            android:title="@string/pref_privateNumber"/>
 
-        </PreferenceCategory>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:dependency="blocking_enabled"
+        android:persistent="false"
+        android:title="@string/pref_title_log">
+        <CheckBoxPreference
+            android:key="enable_log_key"
+            android:summary="@string/pref_logSummary"
+            android:title="@string/pref_log"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:dependency="blocking_enabled"
+        android:persistent="false"
+        android:title="@string/pref_title_notification">
+        <CheckBoxPreference
+            android:key="notification_blocked_call"
+            android:summary="@string/pref_notStatusBarSummary"
+            android:title="@string/pref_notStatusBar"/>
+    </PreferenceCategory>
 
 </PreferenceScreen>

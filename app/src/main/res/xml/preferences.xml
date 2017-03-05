@@ -26,24 +26,6 @@
             android:targetPackage="com.jachness.blockcalls"/>
     </Preference>
 
-    <PreferenceScreen
-        android:persistent="false"
-        android:title="@string/pref_title_log">
-        <CheckBoxPreference
-            android:key="enable_log_key"
-            android:summary="@string/pref_logSummary"
-            android:title="@string/pref_log"/>
-    </PreferenceScreen>
-
-    <PreferenceScreen
-        android:persistent="false"
-        android:title="@string/pref_title_notification">
-        <CheckBoxPreference
-            android:key="notification_blocked_call"
-            android:summary="@string/pref_notStatusBarSummary"
-            android:title="@string/pref_notStatusBar"/>
-    </PreferenceScreen>
-
     <Preference android:title="@string/pref_title_privacy_policy">
         <intent
             android:targetClass="com.jachness.blockcalls.activities.PrivacyPolicyActivity"

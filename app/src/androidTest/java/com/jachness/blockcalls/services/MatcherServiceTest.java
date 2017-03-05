@@ -48,43 +48,28 @@ public final class MatcherServiceTest extends AndroidTest {
         callerID = "1148556045";
         defaultRegion = "AR";
         otherNumber = "4855-6045";
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         //6 digits
         callerID = "3837426789";
         defaultRegion = "AR";
         otherNumber = "426-789";
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         callerID = "3837426789";
         defaultRegion = "AR";
         otherNumber = "26-789";
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         callerID = "3837426789";
         defaultRegion = "AR";
         otherNumber = "6-789";
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
 
         callerID = "3837-426789";
         defaultRegion = "AR";
         otherNumber = "+543837-426789";
-        setStrict(true);
-        Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
 
 
@@ -92,52 +77,39 @@ public final class MatcherServiceTest extends AndroidTest {
         callerID = "11-5491-4754";
         defaultRegion = "AR";
         otherNumber = "15-5491-4754";
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         callerID = "";
         defaultRegion = "zz";
         otherNumber = "+";
-        setStrict(false);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
         Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         callerID = null;
         defaultRegion = null;
         otherNumber = null;
-        setStrict(false);
         Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
+
+        callerID = "011231234567";
+        defaultRegion = "US";
+        otherNumber = "01 123 7654321";
         Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         //Brazilian mobiles lacks of area code if parties are in the same area
         callerID = "21034117";
         defaultRegion = "BR";
         otherNumber = "(21) 2103-4117";
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         //
         callerID = "2103-4117";
         defaultRegion = "BR";
         otherNumber = "+55 (21) 2103-4117";
-        setStrict(false);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
-        Assert.assertFalse(isMatch(callerID, defaultRegion, otherNumber));
 
         //
         callerID = "2103-4117";
         defaultRegion = "BR";
         otherNumber = "+55 2103-4117";
-        setStrict(false);
-        Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
-        setStrict(true);
         Assert.assertTrue(isMatch(callerID, defaultRegion, otherNumber));
 
     }
@@ -152,8 +124,8 @@ public final class MatcherServiceTest extends AndroidTest {
             BlackListNumberEntity entity = new BlackListNumberEntity();
             entity.setNormalizedNumber(otherNumber);
             res = matcherService.isNumberMatch(call, entity);
-            Log.i(TAG, callerID + " | " + defaultRegion + " | " + otherNumber + " | " + getStrict
-                    () + " | [" + res + "]");
+            Log.i(TAG, callerID + " | " + defaultRegion + " | " + otherNumber + " | " + " | [" +
+                    res + "]");
 
         } catch (PhoneNumberException e) {
             e.printStackTrace();
@@ -161,13 +133,5 @@ public final class MatcherServiceTest extends AndroidTest {
             e.printStackTrace();
         }
         return res;
-    }
-
-    private boolean getStrict() {
-        return getAppPreferences().isStrictMatching();
-    }
-
-    private void setStrict(boolean strictMatching) {
-        getAppPreferences().setStrictMatching(strictMatching);
     }
 }

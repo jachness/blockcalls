@@ -40,7 +40,6 @@ public class AppPreferences {
     private static final String ENABLE_BLACK_LIST = "enable_black_list_key";
     private static final String FIRST_TIME = "first_time_key";
     private static final String FIRST_TIME_PHONE_PERM = "first_time_phone_perm_key";
-    private static final String STRICT_MATCHING = "strict_matching_key";
     private static final String ENABLE_LOG = "enable_log_key";
     private static final String NOTIFICATION_BLOCKED_CALL = "notification_blocked_call";
     private static final String QUICK = "quick";
@@ -48,7 +47,6 @@ public class AppPreferences {
     private static final boolean DEFAULT_BUN = false;
     private static final boolean DEFAULT_AOC = false;
     private static final boolean DEFAULT_EBL = true;
-    private static final boolean DEFAULT_SM = false;
     private static final boolean DEFAULT_EL = true;
     private static final boolean DEFAULT_BE = true;
     private static final boolean DEFAULT_NBC = true;
@@ -91,14 +89,6 @@ public class AppPreferences {
 
     public void setFirstTime(boolean firstTime) {
         set(FIRST_TIME, firstTime);
-    }
-
-    public boolean isStrictMatching() {
-        return get(STRICT_MATCHING, DEFAULT_SM);
-    }
-
-    public void setStrictMatching(boolean strictMatching) {
-        set(STRICT_MATCHING, strictMatching);
     }
 
     public boolean isEnableLog() {
@@ -192,7 +182,6 @@ public class AppPreferences {
         this.setBlockPrivateNumbers(DEFAULT_BUN);
         this.setAllowOnlyContacts(DEFAULT_AOC);
         this.setEnableBlackList(DEFAULT_EBL);
-        this.setStrictMatching(DEFAULT_SM);
         this.setEnableLog(DEFAULT_EL);
         this.setBlockingEnable(DEFAULT_BE);
         this.setNotificationBlockedCall(DEFAULT_NBC);

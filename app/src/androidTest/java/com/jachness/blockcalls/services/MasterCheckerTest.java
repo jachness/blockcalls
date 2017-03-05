@@ -23,7 +23,6 @@ import javax.inject.Inject;
 @SuppressWarnings("TryWithIdenticalCatches")
 @RunWith(AndroidJUnit4.class)
 public class MasterCheckerTest extends AndroidTest {
-    private static final String TAG = MasterCheckerTest.class.getSimpleName();
     @Inject
 
     MasterChecker checker;

@@ -118,26 +118,35 @@ public class BlockWrapper {
         }
 
         AudioManager audioManager = ManagerUtil.getAudioManager(context);
-        int previousMode = audioManager.getRingerMode();
-        if (previousMode != AudioManager.RINGER_MODE_SILENT) {
+        int ringerMode = audioManager.getRingerMode();
+        if (ringerMode != AudioManager.RINGER_MODE_SILENT) {
             if (BuildConfig.DEBUG)
-                Log.d(TAG, "Previous ringer mode: " + previousMode);
+                Log.d(TAG, "Actual ringer mode: " + ringerMode);
             audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+            return ringerMode;
         }
-        return previousMode;
+        return -1;
     }
 
     @DebugLog
-    private void unMute(int mode) {
-        if (mode == -1) return;
+    private void unMute(int previousMode) {
+        if (previousMode == -1) return;
+
+        try {
+            //A delay is introduced as sometimes Android does not restore the previous mode
+            //correctly. This delay seems to work.
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            //do nothing
+        }
 
         AudioManager audioManager = ManagerUtil.getAudioManager(context);
-        int previousMode = audioManager.getRingerMode();
-        if (BuildConfig.DEBUG)
-            Log.d(TAG, "Previous ringer mode: " + previousMode);
-        if (previousMode != mode) {
-            audioManager.setRingerMode(mode);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "Should be silent ringer mode: " + audioManager.getRingerMode());
+            Log.d(TAG, "Restituting ringer mode: " + previousMode);
         }
+
+        audioManager.setRingerMode(previousMode);
     }
 
 }

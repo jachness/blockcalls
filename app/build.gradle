@@ -15,10 +15,10 @@ android {
         applicationId "com.jachness.blockcalls"
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 10
-        versionName "1.2.2"
+        versionCode 11
+        versionName "1.2.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = false
+        vectorDrawables.useSupportLibrary = true
 
     }
     buildTypes {
@@ -53,18 +53,18 @@ android {
 
 configurations.all {
     resolutionStrategy {
-        force 'com.android.support:support-annotations:25.1.1'
+        force 'com.android.support:support-annotations:25.2.0'
     }
 }
 
 dependencies {
-    compile 'com.android.support:support-core-utils:25.1.1'
-    compile 'com.android.support:support-core-ui:25.1.1'
-    compile 'com.android.support:support-fragment:25.1.1'
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.android.support:recyclerview-v7:25.1.1'
-    compile 'com.android.support:design:25.1.1'
-    compile 'com.android.support:support-annotations:25.1.1'
+    compile 'com.android.support:support-core-utils:25.2.0'
+    compile 'com.android.support:support-core-ui:25.2.0'
+    compile 'com.android.support:support-fragment:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:support-annotations:25.2.0'
     compile 'com.github.amlcurran.showcaseview:library:5.4.3'
 
     compile 'com.google.dagger:dagger:2.7'

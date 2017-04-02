@@ -24,7 +24,9 @@
               android:layout_height="wrap_content"
               android:orientation="horizontal"
               android:paddingBottom="@dimen/list_vertical_padding"
-              android:paddingTop="@dimen/list_vertical_padding">
+              android:paddingTop="@dimen/list_vertical_padding"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin">
 
 
     <LinearLayout

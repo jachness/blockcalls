@@ -29,11 +29,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:clipToPadding="false"
         android:drawSelectorOnTop="false"
         android:footerDividersEnabled="false"
         android:overScrollMode="ifContentScrolls"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/list_vertical_padding"
+        android:paddingBottom="@dimen/list_vertical_padding"
         android:scrollbarStyle="outsideOverlay"
         tools:listitem="@layout/black_list_row"/>
 

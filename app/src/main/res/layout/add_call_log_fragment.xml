@@ -32,8 +32,9 @@
         android:drawSelectorOnTop="false"
         android:footerDividersEnabled="false"
         android:overScrollMode="ifContentScrolls"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/list_vertical_padding"
+        android:paddingTop="@dimen/list_vertical_padding"
         android:scrollbarStyle="outsideOverlay"/>
 
     <TextView

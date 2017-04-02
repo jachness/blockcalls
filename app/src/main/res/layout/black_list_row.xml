@@ -25,6 +25,8 @@
               android:layout_height="wrap_content"
               android:orientation="horizontal"
               android:paddingBottom="@dimen/list_vertical_padding"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
               android:paddingTop="@dimen/list_vertical_padding">
 
     <ImageView
@@ -33,9 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:layout_margin="0dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="10dp"
-        app:srcCompat="@drawable/ic_delete"/>
+        android:paddingEnd="24dp"
+        android:paddingStart="8dp"
+        android:paddingRight="24dp"
+        app:srcCompat="@drawable/ic_delete"
+        android:paddingLeft="8dp" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -58,7 +62,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/inner_margin"
-            android:fontFamily="sans-serif-light"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:ignore="UnusedAttribute"
             tools:text="+1 123 4567 9876 5345345"/>

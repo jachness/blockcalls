@@ -31,10 +31,9 @@
         android:layout_weight="1"
         android:clipToPadding="false"
         android:drawSelectorOnTop="false"
-        android:footerDividersEnabled="false"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
         android:scrollbarStyle="outsideOverlay"
+        android:paddingTop="@dimen/list_vertical_padding"
+        android:paddingBottom="@dimen/list_vertical_padding"
         tools:listitem="@layout/log_list_row"/>
 
     <TextView

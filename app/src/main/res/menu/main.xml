@@ -30,6 +30,11 @@
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction"/>
     <item
+        android:id="@+id/callLogDeleteAll"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete blocked calls"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/mainMnAllSettings"
         android:icon="@android:drawable/ic_menu_preferences"
         android:menuCategory="system"

@@ -25,9 +25,9 @@
     <string name="addManualMsnNumberAdded">%1$s added</string>
     <string name="addManualMsnFailed">The phone number already exists</string>
 
-    <string name="blackListDeleteAll">All numbers in black list</string>
+    <string name="blackListDeleteAll">All blocked numbers</string>
 
-    <string name="logDeleteAll">All blocked call registry</string>
+    <string name="logDeleteAll">All blocked calls registry</string>
 
 
     <plurals name="contacts_toast_contacts_added">
@@ -135,7 +135,7 @@
 
     <string name="blackListMnItemExport">Save to file</string>
     <string name="blackListMnItemImport">Import from file</string>
-    <string name="blackListMnItemDeleteAll">Delete all</string>
+    <string name="blackListMnItemDeleteAll">Delete black list</string>
     <string name="addManualLabelExplanationBeginWith">(block all phone numbers beginning with this number)</string>
     <string name="pref_cat_blocking_methods">All blocking methods</string>
     <string name="mainMnItemBlockingSettings">Blocking methods</string>
@@ -187,6 +187,10 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="common_allow">Allow</string>
     <string
         name="initial_permissions_message_protected_apps"><![CDATA[Please, allow <font color="#ffd740">%s</font> into <font color="#ffd740">Protected Apps</font> to keep running after the screen is turned off.]]></string>
+    <string name="delete_log_title">Delete all blocked calls?</string>
+    <string name="delete_log_message">All blocked calls in the log will be deleted.</string>
+    <string name="delete_black_list_title">Delete all blocked numbers?</string>
+    <string name="delete_black_list_message">All numbers in the blacklist will be deleted! This can\'t be undone.</string>
 
 
 </resources>

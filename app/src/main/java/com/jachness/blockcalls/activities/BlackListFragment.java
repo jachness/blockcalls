@@ -176,9 +176,9 @@ public class BlackListFragment extends ListFragment implements LoaderManager
         switch (item.getItemId()) {
             case R.id.blackListMnDeleteAll:
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), 0);
-                builder.setTitle(R.string.common_delete);
-                builder.setMessage(R.string.blackListDeleteAll);
-                builder.setPositiveButton(R.string.common_ok, new DialogInterface.OnClickListener
+                builder.setTitle(R.string.delete_black_list_title);
+                builder.setMessage(R.string.delete_black_list_message);
+                builder.setPositiveButton(R.string.common_delete, new DialogInterface.OnClickListener
                         () {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

@@ -151,5 +151,9 @@
     <string name="common_allow">Permitir</string>
     <string
         name="initial_permissions_message_protected_apps"><![CDATA[Por favor, permita <font color="#ffd740">%s</font> en <font color="#ffd740">Aplicaciones Protegidas</font> para ejecutarse con la pantalla apagada.]]></string>
+    <string name="delete_log_title">¿Eliminar todas las llamadas bloqueadas?</string>
+    <string name="delete_log_message">Todas las llamadas bloqueadas en el registro se eliminarán.</string>
+    <string name="delete_black_list_title">¿Eliminar todos los números bloqueados?</string>
+    <string name="delete_black_list_message">¡Se borrarán todos los números de la lista negra! Esto no se puede deshacer.</string>
 
 </resources>

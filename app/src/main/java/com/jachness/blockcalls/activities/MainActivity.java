@@ -118,6 +118,31 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         adapter.addFragment(logListFragment, getResources().getString(R.string.common_log));
         viewPager.addOnPageChangeListener(this);
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                switch (position) {
+                    case 1:
+                        fab.hide();
+                        break;
+
+                    default:
+                        fab.show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
 
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -138,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
 
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private void doCoach() {
@@ -310,6 +337,25 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
+            case R.id.callLogDeleteAll:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this, 0);
+                builder.setTitle(R.string.delete_log_title);
+                builder.setMessage(R.string.delete_log_message);
+                builder.setPositiveButton(R.string.common_delete, new DialogInterface.OnClickListener
+                        () {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getContentResolver().delete(LogTable.CONTENT_URI, null, null);
+                    }
+                });
+                builder.setNegativeButton(R.string.common_cancel, new DialogInterface
+                        .OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.show();
+                return true;
             case R.id.mainMnAllSettings:
                 startActivity(new Intent(MainActivity.this, AllSettingsActivity.class));
                 return true;
@@ -327,12 +373,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public void onPageSelected(int position) {
-        fab.setTag(position);
-        if (position == 0) {
-            fab.setImageResource(R.drawable.ic_add);
-        } else {
-            fab.setImageResource(R.drawable.ic_delete);
-        }
     }
 
     @Override
@@ -382,25 +422,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                         });
                 menuBuilder.show();
                 return;
-            case 1:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this, 0);
-                builder.setTitle(R.string.common_delete);
-                builder.setMessage(R.string.logDeleteAll);
-                builder.setPositiveButton(R.string.common_ok, new DialogInterface.OnClickListener
-                        () {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        getContentResolver().delete(LogTable.CONTENT_URI, null, null);
-                    }
-                });
-                builder.setNegativeButton(R.string.common_cancel, new DialogInterface
-                        .OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                builder.show();
-                return;
             default:
                 throw new IllegalArgumentException("Should not be here");
         }
@@ -445,4 +466,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
 
+
 }
+

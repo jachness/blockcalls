@@ -194,23 +194,23 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                         case 0:
                             showcase.setShowcase(target2, true);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title2));
+                                    .coach_lesson1_title2));
                             showcase.setContentText(getResources().getString(R.string
-                                    .couch_lesson1_Detail2));
+                                    .coach_lesson1_detail2));
                             break;
 
                         case 1:
                             showcase.setShowcase(target3, true);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title3));
+                                    .coach_lesson1_title3));
                             showcase.setContentText(getResources().getString(R.string
-                                    .couch_lesson1_Detail3));
+                                    .coach_lesson1_detail3));
                             break;
 
                         case 2:
                             showcase.setTarget(Target.NONE);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title4));
+                                    .coach_lesson1_title4));
 
 
                             Drawable d;
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                             }
                             d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
                             ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BOTTOM);
-                            String src = getResources().getString(R.string.couch_lesson1_Detail4);
+                            String src = getResources().getString(R.string.coach_lesson1_detail4);
                             SpannableString str = new SpannableString(src);
                             int index = str.toString().indexOf("@");
                             str.setSpan(span, index, index + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
@@ -234,9 +234,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                         case 3:
                             showcase.setShowcase(target4, true);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title5));
+                                    .coach_lesson1_title5));
                             showcase.setContentText(getResources().getString(R.string
-                                    .couch_lesson1_Detail5));
+                                    .coach_lesson1_detail5));
                             showcase.setButtonText(getString(R.string.common_close));
                             break;
                         case 4:
@@ -251,8 +251,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
             showcase = new ShowcaseView.Builder(this)
                     .setTarget(target1)
-                    .setContentTitle(getResources().getString(R.string.couch_lesson1_Title1))
-                    .setContentText(getResources().getString(R.string.couch_lesson1_Detail1))
+                    .setContentTitle(getResources().getString(R.string.coach_lesson1_title1))
+                    .setContentText(getResources().getString(R.string.coach_lesson1_detail1))
                     .withMaterialShowcase()
                     .setStyle(R.style.ShowcaseTheme)
                     .setOnClickListener(listener)

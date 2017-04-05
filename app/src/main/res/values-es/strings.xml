@@ -48,7 +48,7 @@
     <string name="common_write_media_message">Permiso de <b>Espacio de almacenamiento</b> es requerido</string>
     <string name="contactTitle">Contactos</string>
     <string name="contacts_no_contacts_selected">Seleccione un contacto</string>
-    <string name="enum_block_method_black_list">Lista negra</string>
+    <string name="enum_block_method_blacklist">Lista negra</string>
     <string name="enum_block_method_contacts">Contactos</string>
     <string name="enum_block_method_private_number">Privado</string>
     <string name="export_already_exist_message">El archivo de lista negra ya existe. ¿Quiere sobreescribirlo?</string>
@@ -68,7 +68,7 @@
     <string name="log_delete_all">Todos los registros de llamadas bloqueadas</string>
     <string name="main_menu_item_blocking_settings">Métodos de bloqueo</string>
     <string name="main_menu_item_settings">Configuración</string>
-    <string name="mani_menu_title_add_new">Agregar número</string>
+    <string name="main_menu_title_add_new">Agregar número</string>
     <string name="notification_blocked_title">Llamada bloqueada</string>
     <string name="pref_blacklist">Lista negra</string>
     <string name="pref_blacklist_summary">Bloquear números en la lista negra</string>
@@ -89,7 +89,7 @@
     <string name="pref_title_main">Configuración</string>
     <string name="pref_title_notification">Notificaciones</string>
     <string name="common_black_list">Lista negra</string>
-    <string name="common_log">Llamadas bloqueadas</string>
+    <string name="common_log">Llamadas Bloqueadas</string>
 
     <string-array name="main_menu_add">
         <item>Manualmente</item>
@@ -153,7 +153,7 @@
         name="initial_permissions_message_protected_apps"><![CDATA[Por favor, permita <font color="#ffd740">%s</font> en <font color="#ffd740">Aplicaciones Protegidas</font> para ejecutarse con la pantalla apagada.]]></string>
     <string name="delete_log_title">¿Eliminar todas las llamadas bloqueadas?</string>
     <string name="delete_log_message">Todas las llamadas bloqueadas en el registro se eliminarán.</string>
-    <string name="delete_black_list_title">¿Eliminar todos los números bloqueados?</string>
-    <string name="delete_black_list_message">¡Se borrarán todos los números de la lista negra! Esto no se puede deshacer.</string>
+    <string name="delete_blacklist_title">¿Eliminar todos los números bloqueados?</string>
+    <string name="delete_blacklist_message">¡Se borrarán todos los números de la lista negra! Esto no se puede deshacer.</string>
 
 </resources>

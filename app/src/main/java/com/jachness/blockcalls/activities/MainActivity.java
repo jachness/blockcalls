@@ -388,7 +388,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         switch (position) {
             case 0:
                 AlertDialog.Builder menuBuilder = new AlertDialog.Builder(this);
-                menuBuilder.setTitle(R.string.mani_menu_title_add_new)
+                menuBuilder.setTitle(R.string.main_menu_title_add_new)
                         .setItems(R.array.main_menu_add, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent newActivity = new Intent(MainActivity.this, AddActivity

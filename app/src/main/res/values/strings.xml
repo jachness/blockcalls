@@ -69,14 +69,14 @@
     <string name="common_write_media_message"><b>Write storage</b> permission is needed</string>
     <string name="common_grant">Grant</string>
     <string name="common_close">Close</string>
-    <string name="common_black_list">Black list</string>
+    <string name="common_black_list">Blacklist</string>
     <string name="common_log">Blocked Calls</string>
     <string name="common_next">Next</string>
 
 
     <string name="pref_private_number">Private numbers</string>
     <string name="pref_private_number_summary">Block private numbers</string>
-    <string name="pref_blacklist">Black list</string>
+    <string name="pref_blacklist">Blacklist</string>
     <string name="pref_blacklist_summary">Block numbers in the black list</string>
     <string name="pref_title_main">Settings</string>
     <string name="pref_contacts_only">Contacts only</string>
@@ -94,10 +94,10 @@
 
     <string name="enum_block_method_private_number">Private</string>
     <string name="enum_block_method_contacts">Contacts</string>
-    <string name="enum_block_method_black_list">Black list</string>
+    <string name="enum_block_method_blacklist">Blacklist</string>
     <string name="contactTitle">Add from contacts</string>
 
-    <string name="mani_menu_title_add_new">Add number</string>
+    <string name="main_menu_title_add_new">Add number</string>
     <string name="call_log_title">Add from call log</string>
 
     <string name="tag_id" translatable="false">0</string>
@@ -113,11 +113,11 @@
 
     <string name="export_title">Save black list</string>
     <string name="export_success_message">File has been saved:\n %s</string>
-    <string name="export_already_exist_message">The black list file already exist. Do you want to override it?</string>
+    <string name="export_already_exist_message">The black listfile already exist. Do you want to overwrite it?</string>
     <string name="export_progress_bar_message">Saving to file</string>
 
 
-    <string name="import_title">Import black list</string>
+    <string name="import_title">Import blacklist</string>
     <string name="import_message_quantity_zero">No phone numbers imported</string>
     <plurals name="import_message_quantity">
         <item quantity="one">1 phone number imported</item>
@@ -125,11 +125,11 @@
     </plurals>
 
     <string
-        name="common_error_external_storage">External storage could not be accessed. Is there an sdcard and is it mounted?</string>
+        name="common_error_external_storage">External storage could not be accessed. Check if you have an SD card inserted into your phone, and that it is mounted.</string>
     <string
-        name="common_error_write_file">Error creating the file. Is there free storage space?</string>
+        name="common_error_write_file">Error creating the file. Make sure you have enough storage space.</string>
     <string
-        name="common_error_read_file">Error reading the file. Is it a correct file?</string>
+        name="common_error_read_file">Error reading the file. Check if you have selected the correct file.</string>
     <string name="common_async_task_canceled">The process was canceled. Please, try again.</string>
     <string name="import_progress_bar_message">Importing phone numbers</string>
 
@@ -167,15 +167,15 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="pref_title_tutorial">Tutorials</string>
     <string name="coach_lesson1_title4">Done!</string>
     <string name="coach_lesson1_title5">More blocking options</string>
-    <string name="coach_lesson1_title2">Black list</string>
+    <string name="coach_lesson1_title2">Blacklist</string>
     <string name="coach_lesson1_title1">Welcome</string>
-    <string name="coach_lesson1_title3">Add a number to the black list</string>
+    <string name="coach_lesson1_title3">Add a number to the blacklist</string>
     <string name="coach_lesson1_detail1">This tutorial will guide you through the basic functionality to block unwanted calls.</string>
     <string name="coach_lesson1_detail2">The black list is simply a list of phone numbers you want to block. When you receive a phone call, which number is registered in the black list, the app hangs up the call immediately.</string>
     <string name="coach_lesson1_detail3">Tap the + button and choose any of the 3 options. When you finish, you will see the new number in the blacklist.</string>
     <string name="coach_lesson1_detail4">The next time you are called from a blacklisted number, the app will block the call and the @ icon will appear in the notification bar. That way you\'ll know that a call was blocked by the app.</string>
     <string name="coach_lesson1_detail5">You will find more blocking options in this icon. For example, block all private calls or only allow calls that are registered to your contacts.</string>
-    <string name="blacklist_label_empty">Black list is empty.\n Tap the + button to add a phone number.</string>
+    <string name="blacklist_label_empty">Blacklist is empty.\n Tap the + button to add a phone number.</string>
     <string name="log_label_empty">No blocked calls yet</string>
     <string name="call_log_label_empty">There are no incoming calls</string>
     <string name="contact_label_empty">There are no contacts available</string>
@@ -189,8 +189,8 @@ Use the application at your own risk. This application is provided to you “as 
         name="initial_permissions_message_protected_apps"><![CDATA[Please, allow <font color="#ffd740">%s</font> into <font color="#ffd740">Protected Apps</font> to keep running after the screen is turned off.]]></string>
     <string name="delete_log_title">Delete all blocked calls?</string>
     <string name="delete_log_message">All blocked calls in the log will be deleted.</string>
-    <string name="delete_black_list_title">Delete all blocked numbers?</string>
-    <string name="delete_black_list_message">All numbers in the blacklist will be deleted! This can\'t be undone.</string>
+    <string name="delete_blacklist_title">Delete all blocked numbers?</string>
+    <string name="delete_blacklist_message">All numbers in the blacklist will be deleted! This can\'t be undone.</string>
 
 
 </resources>

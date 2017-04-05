@@ -72,11 +72,11 @@ public class AddActivity extends AppCompatActivity {
                     break;
                 case FRAGMENT_MANUAL:
                     fragment = new AddManualFragment();
-                    setTitle(R.string.addManualTitle);
+                    setTitle(R.string.add_manual_title);
                     break;
                 case FRAGMENT_CALLLOG:
                     fragment = new AddCallLogFragment();
-                    setTitle(R.string.callLogTitle);
+                    setTitle(R.string.call_log_title);
                     break;
                 default:
                     throw new RuntimeException("Should not be here");

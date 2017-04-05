@@ -46,6 +46,6 @@
         android:gravity="center"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="@string/blackListLabelEmpty"/>
+        android:text="@string/blacklist_label_empty"/>
 
 </LinearLayout>

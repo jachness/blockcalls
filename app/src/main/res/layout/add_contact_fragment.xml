@@ -45,7 +45,7 @@
         android:gravity="center"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="@string/contactLabelEmpty"/>
+        android:text="@string/contact_label_empty"/>
 
     <LinearLayout
         android:layout_width="match_parent"

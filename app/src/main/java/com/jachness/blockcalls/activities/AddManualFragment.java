@@ -63,7 +63,7 @@ public class AddManualFragment extends Fragment {
                 String number = etPhoneNumber.getText().toString();
                 boolean checked = chBeginWith.isChecked();
                 if (TextUtils.isEmpty(number)) {
-                    Toast.makeText(getContext(), R.string.addManualErrorEmpty, Toast.LENGTH_LONG)
+                    Toast.makeText(getContext(), R.string.add_manual_error_empty, Toast.LENGTH_LONG)
                             .show();
                     return;
                 }
@@ -71,7 +71,7 @@ public class AddManualFragment extends Fragment {
                 AppContext appContext = (AppContext) getActivity().getApplicationContext();
                 boolean valid = appContext.getBlackListWrapper().checkUserInput(number, checked);
                 if (!valid) {
-                    Toast.makeText(getContext(), R.string.addManualErrorInvalid, Toast.LENGTH_LONG)
+                    Toast.makeText(getContext(), R.string.add_manual_error_invalid, Toast.LENGTH_LONG)
                             .show();
                     return;
                 }
@@ -80,9 +80,9 @@ public class AddManualFragment extends Fragment {
                         chBeginWith.isChecked());
                 if (count == 1) {
                     Toast.makeText(getActivity(), String.format(getResources().getString(R.string
-                            .addManualMsnNumberAdded), number), Toast.LENGTH_LONG).show();
+                            .add_manual_msn_number_added), number), Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getActivity(), R.string.addManualMsnFailed, Toast.LENGTH_LONG)
+                    Toast.makeText(getActivity(), R.string.add_manual_msn_failed, Toast.LENGTH_LONG)
                             .show();
                 }
 

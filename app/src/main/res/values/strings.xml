@@ -19,15 +19,15 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Block Calls</string>
-    <string name="addManualTitle">Input number</string>
-    <string name="addManualLabelPhoneNumbers">Phone number</string>
-    <string name="addManualRbBeginWith">Begin with</string>
-    <string name="addManualMsnNumberAdded">%1$s added</string>
-    <string name="addManualMsnFailed">The phone number already exists</string>
+    <string name="add_manual_title">Input number</string>
+    <string name="add_manual_label_phone_numbers">Phone number</string>
+    <string name="add_manual_rb_begin_with">Begin with</string>
+    <string name="add_manual_msn_number_added">%1$s added</string>
+    <string name="add_manual_msn_failed">The phone number already exists</string>
 
-    <string name="blackListDeleteAll">All numbers in black list</string>
+    <string name="blacklist_delete_all">All blocked numbers</string>
 
-    <string name="logDeleteAll">All blocked call registry</string>
+    <string name="log_delete_all">All blocked calls registry</string>
 
 
     <plurals name="contacts_toast_contacts_added">
@@ -50,7 +50,7 @@
         <item quantity="other">Add %d call logs</item>
     </plurals>
 
-    <string name="mainMnItemSettings">Settings</string>
+    <string name="main_menu_item_settings">Settings</string>
 
     <string-array name="main_menu_add">
         <item>Manually</item>
@@ -74,23 +74,23 @@
     <string name="common_next">Next</string>
 
 
-    <string name="pref_privateNumber">Private numbers</string>
-    <string name="pref_privateNumberSummary">Block private numbers</string>
-    <string name="pref_blackList">Black list</string>
-    <string name="pref_blackListSummary">Block numbers in the black list</string>
+    <string name="pref_private_number">Private numbers</string>
+    <string name="pref_private_number_summary">Block private numbers</string>
+    <string name="pref_blacklist">Black list</string>
+    <string name="pref_blacklist_summary">Block numbers in the black list</string>
     <string name="pref_title_main">Settings</string>
-    <string name="pref_contactsOnly">Contacts only</string>
-    <string name="pref_contactsOnlySummary">Block all numbers except contacts</string>
+    <string name="pref_contacts_only">Contacts only</string>
+    <string name="pref_contacts_only_summary">Block all numbers except contacts</string>
     <string name="pref_title_blocking">Blocking</string>
     <string name="pref_title_log">Blocked call registry</string>
     <string name="pref_log">Register</string>
-    <string name="pref_logSummary">Register all blocked phone numbers</string>
+    <string name="pref_log_summary">Register all blocked phone numbers</string>
     <string name="pref_title_notification">Notifications</string>
-    <string name="pref_notStatusBar">Blocked calls</string>
-    <string name="pref_notStatusBarSummary">Show notifications about blocked calls</string>
+    <string name="pref_not_status_bar">Blocked calls</string>
+    <string name="pref_not_status_bar_summary">Show notifications about blocked calls</string>
     <string name="pref_cat_blocking_status">Blocking status</string>
-    <string name="pref_blockingEnable">Enable blocking</string>
-    <string name="pref_blockingEnableSummary">Enable or disable all blocking methods</string>
+    <string name="pref_blocking_enable">Enable blocking</string>
+    <string name="pref_blocking_enable_summary">Enable or disable all blocking methods</string>
 
     <string name="enum_block_method_private_number">Private</string>
     <string name="enum_block_method_contacts">Contacts</string>
@@ -98,7 +98,7 @@
     <string name="contactTitle">Add from contacts</string>
 
     <string name="mani_menu_title_add_new">Add number</string>
-    <string name="callLogTitle">Add from call log</string>
+    <string name="call_log_title">Add from call log</string>
 
     <string name="tag_id" translatable="false">0</string>
     <string name="tag_data" translatable="false">1</string>
@@ -133,12 +133,12 @@
     <string name="common_async_task_canceled">The process was canceled. Please, try again.</string>
     <string name="import_progress_bar_message">Importing phone numbers</string>
 
-    <string name="blackListMnItemExport">Save to file</string>
-    <string name="blackListMnItemImport">Import from file</string>
-    <string name="blackListMnItemDeleteAll">Delete all</string>
-    <string name="addManualLabelExplanationBeginWith">(block all phone numbers beginning with this number)</string>
+    <string name="blacklist_menu_item_export">Save to file</string>
+    <string name="blacklist_menu_item_import">Import from file</string>
+    <string name="blacklist_menu_item_delete_all">Delete black list</string>
+    <string name="add_manual_label_explanation_begin_with">(block all phone numbers beginning with this number)</string>
     <string name="pref_cat_blocking_methods">All blocking methods</string>
-    <string name="mainMnItemBlockingSettings">Blocking methods</string>
+    <string name="main_menu_item_blocking_settings">Blocking methods</string>
 
     <string name="initial_permissions_settings">App settings</string>
     <string name="initial_permissions_message_0"><![CDATA[Please, allow <font
@@ -159,26 +159,26 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="terms_and_conditions_eol_text" translatable="false">Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the functionality found or offered on this application for any particular purpose. You acknowledge that such functionality may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</string>
     <string name="terms_and_conditions_i_text" translatable="false">Your use of any functionality on this application is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any functionality, services or information available through this application meet your specific requirements.</string>
     <string name="pref_title_toc">Term and Conditions</string>
-    <string name="addManualErrorEmpty">Phone number is empty</string>
-    <string name="addManualErrorInvalid">Phone number is invalid</string>
+    <string name="add_manual_error_empty">Phone number is empty</string>
+    <string name="add_manual_error_invalid">Phone number is invalid</string>
 
     <string name="pref_lesson_1">Getting started tutorial</string>
-    <string name="pref_lesson_1_Summary">Block calls by black list method</string>
+    <string name="pref_lesson_1_summary">Block calls by black list method</string>
     <string name="pref_title_tutorial">Tutorials</string>
-    <string name="couch_lesson1_Title4">Done!</string>
-    <string name="couch_lesson1_Title5">More blocking options</string>
-    <string name="couch_lesson1_Title2">Black list</string>
-    <string name="couch_lesson1_Title1">Welcome</string>
-    <string name="couch_lesson1_Title3">Add a number to the black list</string>
-    <string name="couch_lesson1_Detail1">This tutorial will guide you through the basic functionality to block unwanted calls.</string>
-    <string name="couch_lesson1_Detail2">The black list is simply a list of phone numbers you want to block. When you receive a phone call, which number is registered in the black list, the app hangs up the call immediately.</string>
-    <string name="couch_lesson1_Detail3">Tap the + button and choose any of the 3 options. When you finish, you will see the new number in the blacklist.</string>
-    <string name="couch_lesson1_Detail4">The next time you are called from a blacklisted number, the app will block the call and the @ icon will appear in the notification bar. That way you\'ll know that a call was blocked by the app.</string>
-    <string name="couch_lesson1_Detail5">You will find more blocking options in this icon. For example, block all private calls or only allow calls that are registered to your contacts.</string>
-    <string name="blackListLabelEmpty">Black list is empty.\n Tap the + button to add a phone number.</string>
-    <string name="logLabelEmpty">No blocked calls yet</string>
-    <string name="callLogLabelEmpty">There is no incoming calls</string>
-    <string name="contactLabelEmpty">There is no contacts available</string>
+    <string name="coach_lesson1_title4">Done!</string>
+    <string name="coach_lesson1_title5">More blocking options</string>
+    <string name="coach_lesson1_title2">Black list</string>
+    <string name="coach_lesson1_title1">Welcome</string>
+    <string name="coach_lesson1_title3">Add a number to the black list</string>
+    <string name="coach_lesson1_detail1">This tutorial will guide you through the basic functionality to block unwanted calls.</string>
+    <string name="coach_lesson1_detail2">The black list is simply a list of phone numbers you want to block. When you receive a phone call, which number is registered in the black list, the app hangs up the call immediately.</string>
+    <string name="coach_lesson1_detail3">Tap the + button and choose any of the 3 options. When you finish, you will see the new number in the blacklist.</string>
+    <string name="coach_lesson1_detail4">The next time you are called from a blacklisted number, the app will block the call and the @ icon will appear in the notification bar. That way you\'ll know that a call was blocked by the app.</string>
+    <string name="coach_lesson1_detail5">You will find more blocking options in this icon. For example, block all private calls or only allow calls that are registered to your contacts.</string>
+    <string name="blacklist_label_empty">Black list is empty.\n Tap the + button to add a phone number.</string>
+    <string name="log_label_empty">No blocked calls yet</string>
+    <string name="call_log_label_empty">There are no incoming calls</string>
+    <string name="contact_label_empty">There are no contacts available</string>
     <string name="pref_submit_log">Submit debug log</string>
     <string name="support_email_address" translatable="false">contact.blockcalls@gmail.com</string>
     <string name="support_email_subject" translatable="false">Debug log</string>
@@ -187,6 +187,10 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="common_allow">Allow</string>
     <string
         name="initial_permissions_message_protected_apps"><![CDATA[Please, allow <font color="#ffd740">%s</font> into <font color="#ffd740">Protected Apps</font> to keep running after the screen is turned off.]]></string>
+    <string name="delete_log_title">Delete all blocked calls?</string>
+    <string name="delete_log_message">All blocked calls in the log will be deleted.</string>
+    <string name="delete_black_list_title">Delete all blocked numbers?</string>
+    <string name="delete_black_list_message">All numbers in the blacklist will be deleted! This can\'t be undone.</string>
 
 
 </resources>

@@ -127,7 +127,7 @@ public class LogListFragment extends ListFragment implements LoaderManager.Loade
                     holder.blockMethod.setText(R.string.enum_block_method_private_number);
                     return;
                 case BLACK_LIST:
-                    holder.blockMethod.setText(R.string.enum_block_method_black_list);
+                    holder.blockMethod.setText(R.string.enum_block_method_blacklist);
                     return;
                 case CONTACTS:
                     holder.blockMethod.setText(R.string.enum_block_method_contacts);

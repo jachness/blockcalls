@@ -77,7 +77,7 @@
     <string name="pref_private_number">Private numbers</string>
     <string name="pref_private_number_summary">Block private numbers</string>
     <string name="pref_blacklist">Blacklist</string>
-    <string name="pref_blacklist_summary">Block numbers in the black list</string>
+    <string name="pref_blacklist_summary">Block numbers in the blacklist</string>
     <string name="pref_title_main">Settings</string>
     <string name="pref_contacts_only">Contacts only</string>
     <string name="pref_contacts_only_summary">Block all numbers except contacts</string>
@@ -135,7 +135,7 @@
 
     <string name="blacklist_menu_item_export">Save to file</string>
     <string name="blacklist_menu_item_import">Import from file</string>
-    <string name="blacklist_menu_item_delete_all">Delete black list</string>
+    <string name="blacklist_menu_item_delete_all">Delete blacklist</string>
     <string name="add_manual_label_explanation_begin_with">(block all phone numbers beginning with this number)</string>
     <string name="pref_cat_blocking_methods">All blocking methods</string>
     <string name="main_menu_item_blocking_settings">Blocking methods</string>
@@ -163,7 +163,7 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="add_manual_error_invalid">Phone number is invalid</string>
 
     <string name="pref_lesson_1">Getting started tutorial</string>
-    <string name="pref_lesson_1_summary">Block calls by black list method</string>
+    <string name="pref_lesson_1_summary">Block calls by blacklist method</string>
     <string name="pref_title_tutorial">Tutorials</string>
     <string name="coach_lesson1_title4">Done!</string>
     <string name="coach_lesson1_title5">More blocking options</string>
@@ -171,7 +171,7 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="coach_lesson1_title1">Welcome</string>
     <string name="coach_lesson1_title3">Add a number to the blacklist</string>
     <string name="coach_lesson1_detail1">This tutorial will guide you through the basic functionality to block unwanted calls.</string>
-    <string name="coach_lesson1_detail2">The black list is simply a list of phone numbers you want to block. When you receive a phone call, which number is registered in the black list, the app hangs up the call immediately.</string>
+    <string name="coach_lesson1_detail2">The blacklist is simply a list of phone numbers you want to block. When you receive a phone call, which number is registered in the blacklist, the app hangs up the call immediately.</string>
     <string name="coach_lesson1_detail3">Tap the + button and choose any of the 3 options. When you finish, you will see the new number in the blacklist.</string>
     <string name="coach_lesson1_detail4">The next time you are called from a blacklisted number, the app will block the call and the @ icon will appear in the notification bar. That way you\'ll know that a call was blocked by the app.</string>
     <string name="coach_lesson1_detail5">You will find more blocking options in this icon. For example, block all private calls or only allow calls that are registered to your contacts.</string>

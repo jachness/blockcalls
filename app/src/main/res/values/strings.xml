@@ -28,6 +28,7 @@
     <string name="blacklist_delete_all">All blocked numbers</string>
 
     <string name="log_delete_all">All blocked calls registry</string>
+    <string name="log_menu_item_delete_all">Delete blocked calls</string>
 
 
     <plurals name="contacts_toast_contacts_added">

@@ -22,10 +22,13 @@
     <color name="colorPrimary">#795548</color>
     <color name="colorPrimaryDark">#5d4037</color>
     <color name="colorAccent">#ffd740</color>
+    <color name="colorAccentDark">#ffc400</color>
     <color name="colorAccent2">#4caf50</color>
+    <color name="colorAccent2Dark">#388e3c</color>
     <color name="colorAccent2Previous" tools:ignore="UnusedResources">#00b30f</color>
 
 
-    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorPrimary">#ffffffff</color>
+    <color name="textColorSecondary">#b3ffffff</color>
 
 </resources>

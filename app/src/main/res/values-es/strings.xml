@@ -25,7 +25,6 @@
     <string name="add_manual_msn_number_added">%1$s agregado</string>
     <string name="add_manual_rb_begin_with">Comienzan con</string>
     <string name="add_manual_title">Ingresar número</string>
-    <string name="blacklist_delete_all">Todos los números en la lista negra</string>
     <string name="blacklist_menu_item_delete_all">Borrar todo</string>
     <string name="blacklist_menu_item_export">Guardar a archivo</string>
     <string name="blacklist_menu_item_import">Importar desde archivo</string>
@@ -65,7 +64,6 @@
     <string
         name="initial_permissions_message_2"><![CDATA[Por favor, permita <font color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.]]></string>
     <string name="initial_permissions_settings">Configurar aplicación</string>
-    <string name="log_delete_all">Todos los registros de llamadas bloqueadas</string>
     <string name="main_menu_item_blocking_settings">Métodos de bloqueo</string>
     <string name="main_menu_item_settings">Configuración</string>
     <string name="main_menu_title_add_new">Agregar número</string>
@@ -155,5 +153,6 @@
     <string name="delete_log_message">Todas las llamadas bloqueadas en el registro se eliminarán.</string>
     <string name="delete_blacklist_title">¿Eliminar todos los números bloqueados?</string>
     <string name="delete_blacklist_message">¡Se borrarán todos los números de la lista negra! Esto no se puede deshacer.</string>
+    <string name="log_menu_item_delete_all">Borrar números bloqueados</string>
 
 </resources>

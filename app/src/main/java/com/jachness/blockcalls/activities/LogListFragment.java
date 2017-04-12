@@ -63,8 +63,7 @@ public class LogListFragment extends ListFragment implements LoaderManager.Loade
             savedInstanceState) {
         View rootView = inflater.inflate(R.layout.log_list_main, null);
         ListView lv = (ListView) rootView.findViewById(android.R.id.list);
-        lv.addFooterView(getLayoutInflater(savedInstanceState).inflate(R.layout.log_list_footer,
-                null), null, false);
+        lv.addFooterView(inflater.inflate(R.layout.log_list_footer, null), null, false);
         setHasOptionsMenu(true);
         return rootView;
     }

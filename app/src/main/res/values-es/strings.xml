@@ -153,6 +153,6 @@
     <string name="delete_log_message">Todas las llamadas bloqueadas en el registro se eliminarán.</string>
     <string name="delete_blacklist_title">¿Eliminar todos los números bloqueados?</string>
     <string name="delete_blacklist_message">¡Se borrarán todos los números de la lista negra! Esto no se puede deshacer.</string>
-    <string name="log_menu_item_delete_all">Borrar números bloqueados</string>
+    <string name="log_menu_item_delete_all">Eliminar llamadas bloqueadas</string>
 
 </resources>

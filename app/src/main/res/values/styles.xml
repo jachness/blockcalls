@@ -31,19 +31,19 @@
     </style>
 
     <style name="ShowcaseTheme" parent="ShowcaseView">
-        <item name="sv_backgroundColor">#99388e3c</item> //Green 700, 60% alpha
-        <item name="sv_showcaseColor">@color/colorAccent2</item>
+        <item name="sv_backgroundColor">#f05040ff</item>
+        <item name="sv_showcaseColor">#1f9929</item>
         <item name="sv_buttonText">@string/common_next</item>
         <item name="sv_titleTextAppearance">@style/ShowcaseTitle</item>
         <item name="sv_detailTextAppearance">@style/ShowcaseText</item>
     </style>
 
     <style name="ShowcaseTitle" parent="TextAppearance.ShowcaseView.Title">
-        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColor">#ffffff</item>
     </style>
 
     <style name="ShowcaseText" parent="TextAppearance.ShowcaseView.Detail">
-        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:textColor">#c2c2c2</item>
     </style>
 
     <style name="FilePickerTheme" parent="NNF_BaseTheme">

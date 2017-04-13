@@ -93,8 +93,7 @@ public class BlackListFragment extends ListFragment implements LoaderManager
             savedInstanceState) {
         View rootView = inflater.inflate(R.layout.black_list_main, null);
         ListView lv = (ListView) rootView.findViewById(android.R.id.list);
-        lv.addFooterView(getLayoutInflater(savedInstanceState).inflate(R.layout
-                .black_list_footer, null), null, false);
+        lv.addFooterView(inflater.inflate(R.layout.black_list_footer, null), null, false);
         setHasOptionsMenu(true);
         return rootView;
     }
@@ -176,9 +175,9 @@ public class BlackListFragment extends ListFragment implements LoaderManager
         switch (item.getItemId()) {
             case R.id.blackListMnDeleteAll:
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), 0);
-                builder.setTitle(R.string.common_delete);
-                builder.setMessage(R.string.blackListDeleteAll);
-                builder.setPositiveButton(R.string.common_ok, new DialogInterface.OnClickListener
+                builder.setTitle(R.string.delete_blacklist_title);
+                builder.setMessage(R.string.delete_blacklist_message);
+                builder.setPositiveButton(R.string.common_delete, new DialogInterface.OnClickListener
                         () {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

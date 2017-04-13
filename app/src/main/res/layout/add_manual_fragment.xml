@@ -37,7 +37,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/inner_margin"
-        android:text="@string/addManualLabelPhoneNumbers"
+        android:text="@string/add_manual_label_phone_numbers"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
     <EditText
@@ -64,7 +64,7 @@
         android:layout_below="@+id/addManualTfPhoneNumber"
         android:layout_marginBottom="@dimen/inner_margin"
         android:layout_marginTop="@dimen/inner_margin"
-        android:text="@string/addManualRbBeginWith"/>
+        android:text="@string/add_manual_rb_begin_with"/>
 
     <TextView
 
@@ -74,7 +74,7 @@
         android:layout_alignBottom="@+id/addManualCbBeginWith"
         android:layout_toEndOf="@+id/addManualLabelPhoneNumber"
         android:layout_toRightOf="@+id/addManualLabelPhoneNumber"
-        android:text="@string/addManualLabelExplanationBeginWith"
+        android:text="@string/add_manual_label_explanation_begin_with"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
 
     <LinearLayout

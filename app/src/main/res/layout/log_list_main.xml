@@ -44,6 +44,6 @@
         android:gravity="center"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="@string/logLabelEmpty"/>
+        android:text="@string/log_label_empty"/>
 
 </LinearLayout>

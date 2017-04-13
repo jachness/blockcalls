@@ -19,19 +19,18 @@
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="addManualLabelExplanationBeginWith">(bloquear todos los número de teléfono que comienzan con este número)</string>
-    <string name="addManualLabelPhoneNumbers">Numero de teléfono</string>
-    <string name="addManualMsnFailed">El número de teléfono ya existe</string>
-    <string name="addManualMsnNumberAdded">%1$s agregado</string>
-    <string name="addManualRbBeginWith">Comienzan con</string>
-    <string name="addManualTitle">Ingresar número</string>
-    <string name="blackListDeleteAll">Todos los números en la lista negra</string>
-    <string name="blackListMnItemDeleteAll">Borrar todo</string>
-    <string name="blackListMnItemExport">Guardar a archivo</string>
-    <string name="blackListMnItemImport">Importar desde archivo</string>
+    <string name="add_manual_label_explanation_begin_with">(bloquear todos los número de teléfono que comienzan con este número)</string>
+    <string name="add_manual_label_phone_numbers">Numero de teléfono</string>
+    <string name="add_manual_msn_failed">El número de teléfono ya existe</string>
+    <string name="add_manual_msn_number_added">%1$s agregado</string>
+    <string name="add_manual_rb_begin_with">Comienzan con</string>
+    <string name="add_manual_title">Ingresar número</string>
+    <string name="blacklist_menu_item_delete_all">Borrar todo</string>
+    <string name="blacklist_menu_item_export">Guardar a archivo</string>
+    <string name="blacklist_menu_item_import">Importar desde archivo</string>
     <string name="blocked_number">Número blockeado</string>
     <string name="blocking_service_description">Bloquear llamadas de teléfono</string>
-    <string name="callLogTitle">Registro de llamadas</string>
+    <string name="call_log_title">Registro de llamadas</string>
     <string name="call_log_no_contacts_selected">Seleccione un registro</string>
     <string name="common_add">Agregar</string>
     <string name="common_async_task_canceled">El proceso fue cancelado. Por favor, intente nuevamente.</string>
@@ -48,7 +47,7 @@
     <string name="common_write_media_message">Permiso de <b>Espacio de almacenamiento</b> es requerido</string>
     <string name="contactTitle">Contactos</string>
     <string name="contacts_no_contacts_selected">Seleccione un contacto</string>
-    <string name="enum_block_method_black_list">Lista negra</string>
+    <string name="enum_block_method_blacklist">Lista negra</string>
     <string name="enum_block_method_contacts">Contactos</string>
     <string name="enum_block_method_private_number">Privado</string>
     <string name="export_already_exist_message">El archivo de lista negra ya existe. ¿Quiere sobreescribirlo?</string>
@@ -65,31 +64,30 @@
     <string
         name="initial_permissions_message_2"><![CDATA[Por favor, permita <font color="#ffd740">acceso de No Molestar</font> a esta aplicación, para posibilitar el bloqueo de llamadas.]]></string>
     <string name="initial_permissions_settings">Configurar aplicación</string>
-    <string name="logDeleteAll">Todos los registros de llamadas bloqueadas</string>
-    <string name="mainMnItemBlockingSettings">Métodos de bloqueo</string>
-    <string name="mainMnItemSettings">Configuración</string>
-    <string name="mani_menu_title_add_new">Agregar número</string>
+    <string name="main_menu_item_blocking_settings">Métodos de bloqueo</string>
+    <string name="main_menu_item_settings">Configuración</string>
+    <string name="main_menu_title_add_new">Agregar número</string>
     <string name="notification_blocked_title">Llamada bloqueada</string>
-    <string name="pref_blackList">Lista negra</string>
-    <string name="pref_blackListSummary">Bloquear números en la lista negra</string>
-    <string name="pref_blockingEnable">Habilitar bloqueo</string>
-    <string name="pref_blockingEnableSummary">Habilitar o deshabilitar todos los métodos de bloqueo</string>
+    <string name="pref_blacklist">Lista negra</string>
+    <string name="pref_blacklist_summary">Bloquear números en la lista negra</string>
+    <string name="pref_blocking_enable">Habilitar bloqueo</string>
+    <string name="pref_blocking_enable_summary">Habilitar o deshabilitar todos los métodos de bloqueo</string>
     <string name="pref_cat_blocking_methods">Todos los métodos de bloqueo</string>
     <string name="pref_cat_blocking_status">Estado de bloqueo</string>
-    <string name="pref_contactsOnly">Solo contactos</string>
-    <string name="pref_contactsOnlySummary">Bloquear todos los números de teléfono excepto los contactos</string>
+    <string name="pref_contacts_only">Solo contactos</string>
+    <string name="pref_contacts_only_summary">Bloquear todos los números de teléfono excepto los contactos</string>
     <string name="pref_log">Registrar</string>
-    <string name="pref_logSummary">Registrar todas las llamadas bloqueadas</string>
-    <string name="pref_notStatusBar">Llamadas bloqueadas</string>
-    <string name="pref_notStatusBarSummary">Mostrar notificaciones de bloqueo de llamadas</string>
-    <string name="pref_privateNumber">Números privados</string>
-    <string name="pref_privateNumberSummary">Bloquear números privados</string>
+    <string name="pref_log_summary">Registrar todas las llamadas bloqueadas</string>
+    <string name="pref_not_status_bar">Llamadas bloqueadas</string>
+    <string name="pref_not_status_bar_summary">Mostrar notificaciones de bloqueo de llamadas</string>
+    <string name="pref_private_number">Números privados</string>
+    <string name="pref_private_number_summary">Bloquear números privados</string>
     <string name="pref_title_blocking">Bloqueo</string>
     <string name="pref_title_log">Registro de llamadas bloqueadas</string>
     <string name="pref_title_main">Configuración</string>
     <string name="pref_title_notification">Notificaciones</string>
     <string name="common_black_list">Lista negra</string>
-    <string name="common_log">Llamadas bloqueadas</string>
+    <string name="common_log">Llamadas Bloqueadas</string>
 
     <string-array name="main_menu_add">
         <item>Manualmente</item>
@@ -122,27 +120,27 @@
     </plurals>
     <string name="pref_title_privacy_policy">Política de privacidad</string>
     <string name="pref_title_toc">Términos y Condiciones</string>
-    <string name="addManualErrorEmpty">El número de teléfono está vacío</string>
-    <string name="addManualErrorInvalid">El número de teléfono es inválido</string>
+    <string name="add_manual_error_empty">El número de teléfono está vacío</string>
+    <string name="add_manual_error_invalid">El número de teléfono es inválido</string>
     <string name="common_next">Siguiente</string>
 
-    <string name="couch_lesson1_Title1">Bienvenido</string>
-    <string name="couch_lesson1_Detail1">Este tutorial te guiará en la funcionalidad básica para bloquear llamadas no deseadas.</string>
-    <string name="couch_lesson1_Title2">Lista negra</string>
-    <string name="couch_lesson1_Detail2">La lista negra es simplemente una lista de números de teléfono que desea bloquear. Es decir, cuando te llamen desde un número que esté registrado en la lista negra, la app cortará o colgará la llamada inmediatamente.</string>
-    <string name="couch_lesson1_Title3">Agregar un número en la lista negra</string>
-    <string name="couch_lesson1_Detail3">Toque el botón + y elige cualquiera de las 3 opciones. Cuando finalices, verás el nuevo número en la lista negra.</string>
-    <string name="couch_lesson1_Title4">Listo!</string>
-    <string name="couch_lesson1_Detail4">La próxima vez que te llamen desde un número registrado en la lista negra, la app bloqueará la llamada y aparecerá el siguiente ícono @ en la barra de notificación. Así sabrás que una llamada fue bloqueada por la app.</string>
-    <string name="couch_lesson1_Title5">Más posibilidades de bloqueo</string>
-    <string name="couch_lesson1_Detail5">En este ícono encontrarás más opciones de bloqueo. Por ejemplo, bloquear todas las llamadas privadas o solo admitir llamadas que estén registrados en tus contactos.</string>
+    <string name="coach_lesson1_title1">Bienvenido</string>
+    <string name="coach_lesson1_detail1">Este tutorial te guiará en la funcionalidad básica para bloquear llamadas no deseadas.</string>
+    <string name="coach_lesson1_title2">Lista negra</string>
+    <string name="coach_lesson1_detail2">La lista negra es simplemente una lista de números de teléfono que desea bloquear. Es decir, cuando te llamen desde un número que esté registrado en la lista negra, la app cortará o colgará la llamada inmediatamente.</string>
+    <string name="coach_lesson1_title3">Agregar un número en la lista negra</string>
+    <string name="coach_lesson1_detail3">Toque el botón + y elige cualquiera de las 3 opciones. Cuando finalices, verás el nuevo número en la lista negra.</string>
+    <string name="coach_lesson1_title4">Listo!</string>
+    <string name="coach_lesson1_detail4">La próxima vez que te llamen desde un número registrado en la lista negra, la app bloqueará la llamada y aparecerá el siguiente ícono @ en la barra de notificación. Así sabrás que una llamada fue bloqueada por la app.</string>
+    <string name="coach_lesson1_title5">Más posibilidades de bloqueo</string>
+    <string name="coach_lesson1_detail5">En este ícono encontrarás más opciones de bloqueo. Por ejemplo, bloquear todas las llamadas privadas o solo admitir llamadas que estén registrados en tus contactos.</string>
     <string name="pref_title_tutorial">Tutoriales</string>
     <string name="pref_lesson_1">Tutorial introductorio</string>
-    <string name="pref_lesson_1_Summary">Bloquear llamadas por método de lista negra</string>
-    <string name="logLabelEmpty">Aún no han habido llamadas bloqueadas</string>
-    <string name="blackListLabelEmpty">La lista negra está vacía.\n Toque el botón + para agregar un número de teléfono.</string>
-    <string name="callLogLabelEmpty">No hay llamadas entrantes</string>
-    <string name="contactLabelEmpty">No hay contactos disponibles</string>
+    <string name="pref_lesson_1_summary">Bloquear llamadas por método de lista negra</string>
+    <string name="log_label_empty">Aún no han habido llamadas bloqueadas</string>
+    <string name="blacklist_label_empty">La lista negra está vacía.\n Toque el botón + para agregar un número de teléfono.</string>
+    <string name="call_log_label_empty">No hay llamadas entrantes</string>
+    <string name="contact_label_empty">No hay contactos disponibles</string>
     <string name="app_name">Bloquear Llamadas</string>
     <string name="blocking_service_started">Servicio de Bloquear Llamadas</string>
     <string name="common_ok">OK</string>
@@ -151,5 +149,10 @@
     <string name="common_allow">Permitir</string>
     <string
         name="initial_permissions_message_protected_apps"><![CDATA[Por favor, permita <font color="#ffd740">%s</font> en <font color="#ffd740">Aplicaciones Protegidas</font> para ejecutarse con la pantalla apagada.]]></string>
+    <string name="delete_log_title">¿Eliminar todas las llamadas bloqueadas?</string>
+    <string name="delete_log_message">Todas las llamadas bloqueadas en el registro se eliminarán.</string>
+    <string name="delete_blacklist_title">¿Eliminar todos los números bloqueados?</string>
+    <string name="delete_blacklist_message">¡Se borrarán todos los números de la lista negra! Esto no se puede deshacer.</string>
+    <string name="log_menu_item_delete_all">Eliminar llamadas bloqueadas</string>
 
 </resources>

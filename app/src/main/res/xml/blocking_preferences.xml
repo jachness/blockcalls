@@ -26,8 +26,8 @@
         android:title="@string/pref_cat_blocking_status">
         <CheckBoxPreference
             android:key="blocking_enabled"
-            android:summary="@string/pref_blockingEnableSummary"
-            android:title="@string/pref_blockingEnable"/>
+            android:summary="@string/pref_blocking_enable_summary"
+            android:title="@string/pref_blocking_enable"/>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -37,18 +37,18 @@
 
         <CheckBoxPreference
             android:key="enable_black_list_key"
-            android:summary="@string/pref_blackListSummary"
-            android:title="@string/pref_blackList"/>
+            android:summary="@string/pref_blacklist_summary"
+            android:title="@string/pref_blacklist"/>
 
         <CheckBoxPreference
             android:key="allow_only_contacts_key"
-            android:summary="@string/pref_contactsOnlySummary"
-            android:title="@string/pref_contactsOnly"/>
+            android:summary="@string/pref_contacts_only_summary"
+            android:title="@string/pref_contacts_only"/>
 
         <CheckBoxPreference
             android:key="block_private_numbers_key"
-            android:summary="@string/pref_privateNumberSummary"
-            android:title="@string/pref_privateNumber"/>
+            android:summary="@string/pref_private_number_summary"
+            android:title="@string/pref_private_number"/>
 
     </PreferenceCategory>
 
@@ -58,7 +58,7 @@
         android:title="@string/pref_title_log">
         <CheckBoxPreference
             android:key="enable_log_key"
-            android:summary="@string/pref_logSummary"
+            android:summary="@string/pref_log_summary"
             android:title="@string/pref_log"/>
     </PreferenceCategory>
 
@@ -68,8 +68,8 @@
         android:title="@string/pref_title_notification">
         <CheckBoxPreference
             android:key="notification_blocked_call"
-            android:summary="@string/pref_notStatusBarSummary"
-            android:title="@string/pref_notStatusBar"/>
+            android:summary="@string/pref_not_status_bar_summary"
+            android:title="@string/pref_not_status_bar"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

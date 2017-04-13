@@ -49,6 +49,9 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/mainFloatingActionButton"
+        android:contentDescription="@string/common_add"
+        app:layout_anchor="@id/viewpager"
+        app:layout_anchorGravity="bottom|right|end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

@@ -118,6 +118,31 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         adapter.addFragment(logListFragment, getResources().getString(R.string.common_log));
         viewPager.addOnPageChangeListener(this);
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                switch (position) {
+                    case 1:
+                        fab.hide();
+                        break;
+
+                    default:
+                        fab.show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
 
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -138,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
 
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private void doCoach() {
@@ -167,23 +194,23 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                         case 0:
                             showcase.setShowcase(target2, true);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title2));
+                                    .coach_lesson1_title2));
                             showcase.setContentText(getResources().getString(R.string
-                                    .couch_lesson1_Detail2));
+                                    .coach_lesson1_detail2));
                             break;
 
                         case 1:
                             showcase.setShowcase(target3, true);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title3));
+                                    .coach_lesson1_title3));
                             showcase.setContentText(getResources().getString(R.string
-                                    .couch_lesson1_Detail3));
+                                    .coach_lesson1_detail3));
                             break;
 
                         case 2:
                             showcase.setTarget(Target.NONE);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title4));
+                                    .coach_lesson1_title4));
 
 
                             Drawable d;
@@ -197,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                             }
                             d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
                             ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BOTTOM);
-                            String src = getResources().getString(R.string.couch_lesson1_Detail4);
+                            String src = getResources().getString(R.string.coach_lesson1_detail4);
                             SpannableString str = new SpannableString(src);
                             int index = str.toString().indexOf("@");
                             str.setSpan(span, index, index + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
@@ -207,9 +234,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                         case 3:
                             showcase.setShowcase(target4, true);
                             showcase.setContentTitle(getResources().getString(R.string
-                                    .couch_lesson1_Title5));
+                                    .coach_lesson1_title5));
                             showcase.setContentText(getResources().getString(R.string
-                                    .couch_lesson1_Detail5));
+                                    .coach_lesson1_detail5));
                             showcase.setButtonText(getString(R.string.common_close));
                             break;
                         case 4:
@@ -224,8 +251,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
             showcase = new ShowcaseView.Builder(this)
                     .setTarget(target1)
-                    .setContentTitle(getResources().getString(R.string.couch_lesson1_Title1))
-                    .setContentText(getResources().getString(R.string.couch_lesson1_Detail1))
+                    .setContentTitle(getResources().getString(R.string.coach_lesson1_title1))
+                    .setContentText(getResources().getString(R.string.coach_lesson1_detail1))
                     .withMaterialShowcase()
                     .setStyle(R.style.ShowcaseTheme)
                     .setOnClickListener(listener)
@@ -310,6 +337,25 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
+            case R.id.callLogDeleteAll:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this, 0);
+                builder.setTitle(R.string.delete_log_title);
+                builder.setMessage(R.string.delete_log_message);
+                builder.setPositiveButton(R.string.common_delete, new DialogInterface.OnClickListener
+                        () {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getContentResolver().delete(LogTable.CONTENT_URI, null, null);
+                    }
+                });
+                builder.setNegativeButton(R.string.common_cancel, new DialogInterface
+                        .OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.show();
+                return true;
             case R.id.mainMnAllSettings:
                 startActivity(new Intent(MainActivity.this, AllSettingsActivity.class));
                 return true;
@@ -327,12 +373,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public void onPageSelected(int position) {
-        fab.setTag(position);
-        if (position == 0) {
-            fab.setImageResource(R.drawable.ic_add);
-        } else {
-            fab.setImageResource(R.drawable.ic_delete);
-        }
     }
 
     @Override
@@ -348,7 +388,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         switch (position) {
             case 0:
                 AlertDialog.Builder menuBuilder = new AlertDialog.Builder(this);
-                menuBuilder.setTitle(R.string.mani_menu_title_add_new)
+                menuBuilder.setTitle(R.string.main_menu_title_add_new)
                         .setItems(R.array.main_menu_add, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent newActivity = new Intent(MainActivity.this, AddActivity
@@ -381,25 +421,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                             }
                         });
                 menuBuilder.show();
-                return;
-            case 1:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this, 0);
-                builder.setTitle(R.string.common_delete);
-                builder.setMessage(R.string.logDeleteAll);
-                builder.setPositiveButton(R.string.common_ok, new DialogInterface.OnClickListener
-                        () {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        getContentResolver().delete(LogTable.CONTENT_URI, null, null);
-                    }
-                });
-                builder.setNegativeButton(R.string.common_cancel, new DialogInterface
-                        .OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                builder.show();
                 return;
             default:
                 throw new IllegalArgumentException("Should not be here");
@@ -445,4 +466,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
 
+
 }
+

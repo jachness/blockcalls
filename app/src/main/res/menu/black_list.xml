@@ -24,17 +24,17 @@
     <item
         android:id="@+id/blackListMnDeleteAll"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="@string/blackListMnItemDeleteAll"
+        android:title="@string/blacklist_menu_item_delete_all"
         app:showAsAction="never"/>
     <item
         android:id="@+id/blackListMnExport"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="@string/blackListMnItemExport"
+        android:title="@string/blacklist_menu_item_export"
         app:showAsAction="never"/>
     <item
         android:id="@+id/blackListMnImport"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="@string/blackListMnItemImport"
+        android:title="@string/blacklist_menu_item_import"
         app:showAsAction="never"/>
 
 </menu>

@@ -25,9 +25,6 @@
     <string name="add_manual_msn_number_added">%1$s added</string>
     <string name="add_manual_msn_failed">The phone number already exists</string>
 
-    <string name="blacklist_delete_all">All blocked numbers</string>
-
-    <string name="log_delete_all">All blocked calls registry</string>
     <string name="log_menu_item_delete_all">Delete blocked calls</string>
 
 

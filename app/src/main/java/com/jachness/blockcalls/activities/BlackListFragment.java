@@ -93,8 +93,7 @@ public class BlackListFragment extends ListFragment implements LoaderManager
             savedInstanceState) {
         View rootView = inflater.inflate(R.layout.black_list_main, null);
         ListView lv = (ListView) rootView.findViewById(android.R.id.list);
-        lv.addFooterView(getLayoutInflater(savedInstanceState).inflate(R.layout
-                .black_list_footer, null), null, false);
+        lv.addFooterView(inflater.inflate(R.layout.black_list_footer, null), null, false);
         setHasOptionsMenu(true);
         return rootView;
     }

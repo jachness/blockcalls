@@ -189,7 +189,7 @@ Use the application at your own risk. This application is provided to you “as 
     <string name="delete_log_message">All blocked calls in the log will be deleted.</string>
     <string name="delete_blacklist_title">Delete all blocked numbers?</string>
     <string name="delete_blacklist_message">All numbers in the blacklist will be deleted! This can\'t be undone.</string>
-
+    <string name="pref_open_source_licenses">Open source licenses</string>
 
 </resources>
 

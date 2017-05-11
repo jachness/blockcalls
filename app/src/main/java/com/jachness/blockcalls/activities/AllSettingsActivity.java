@@ -22,9 +22,11 @@ package com.jachness.blockcalls.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -32,6 +34,8 @@ import android.util.Log;
 import com.jachness.blockcalls.R;
 import com.jachness.blockcalls.stuff.AppContext;
 import com.jachness.blockcalls.stuff.AppPreferences;
+
+import de.psdev.licensesdialog.LicensesDialog;
 
 /**
  * Created by jachness on 14/11/2016.
@@ -52,6 +56,9 @@ public class AllSettingsActivity extends PreferenceActivity {
         @SuppressWarnings("deprecation") Preference submitDebugLog = this.findPreference
                 ("pref_submit_debug_logs");
 
+        @SuppressWarnings("deprecation") Preference openSourceLicenses = this.findPreference
+                ("pref_open_source_licenses");
+
         submitDebugLog.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
@@ -62,6 +69,17 @@ public class AllSettingsActivity extends PreferenceActivity {
         });
         submitDebugLog.setSummary(getVersion());
 
+        openSourceLicenses.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                new LicensesDialog.Builder(AllSettingsActivity.this)
+                        .setNotices(R.raw.notices)
+                        .build()
+                        .show();
+                return true;
+            }
+        });
 
         preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override

@@ -48,6 +48,7 @@ public class AppContext extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //If DaggerAllComponent gives an error, just rebuild the project
         dagger = DaggerAllComponent.builder().blockModule(new BlockModule(this)).appModule(new
                 AppModule(this)).dAOModule(new DAOModule(this)).build();
         dagger.inject(this);

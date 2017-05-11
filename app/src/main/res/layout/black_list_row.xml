@@ -35,8 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:layout_margin="0dp"
-        android:paddingEnd="24dp"
-        android:paddingStart="8dp"
+        android:paddingEnd="32dp"
+        android:paddingStart="0dp"
         android:paddingRight="24dp"
         app:srcCompat="@drawable/ic_delete"
         android:paddingLeft="8dp" />

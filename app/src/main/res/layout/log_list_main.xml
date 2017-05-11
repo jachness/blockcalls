@@ -34,6 +34,8 @@
         android:scrollbarStyle="outsideOverlay"
         android:paddingTop="@dimen/list_vertical_padding"
         android:paddingBottom="@dimen/list_vertical_padding"
+        android:overScrollFooter="@android:color/transparent"
+        android:footerDividersEnabled="false"
         tools:listitem="@layout/log_list_row"/>
 
     <TextView

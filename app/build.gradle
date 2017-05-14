@@ -26,7 +26,7 @@ android {
             debuggable true
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-sqlite.pro', 'proguard-dagger.pro', 'proguard-appcompat-v7.pro', 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-sqlite.pro', 'proguard-dagger.pro', 'proguard-appcompat-v7.pro', 'proguard-rules.pro', 'proguard-licensesdialog.pro', 'proguard-showcaseview.pro'
         }
         release {
             debuggable false
@@ -53,19 +53,23 @@ android {
 
 configurations.all {
     resolutionStrategy {
-        force 'com.android.support:support-annotations:25.2.0'
+        force 'com.android.support:support-annotations:25.3.1'
     }
 }
 
 dependencies {
-    compile 'com.android.support:support-core-utils:25.2.0'
-    compile 'com.android.support:support-core-ui:25.2.0'
-    compile 'com.android.support:support-fragment:25.2.0'
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support:support-annotations:25.2.0'
+    compile 'com.android.support:support-core-utils:25.3.1'
+    compile 'com.android.support:support-core-ui:25.3.1'
+    compile 'com.android.support:support-fragment:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-annotations:25.3.1'
     compile 'com.github.amlcurran.showcaseview:library:5.4.3'
+    compile ('de.psdev.licensesdialog:licensesdialog:1.8.2'){
+        exclude group: 'com.android.support';
+        exclude group: 'com.google.code.findbugs'
+    }
 
     compile 'com.google.dagger:dagger:2.7'
     compile 'com.nononsenseapps:filepicker:3.1.0'

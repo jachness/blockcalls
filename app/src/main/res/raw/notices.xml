@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<notices>
+
+    <notice>
+        <name>Android Open Source Project</name>
+        <url>https://source.android.com</url>
+        <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>Dagger</name>
+        <url>https://github.com/google/dagger</url>
+        <copyright>Copyright 2012 The Dagger Authors</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>Dexmaker</name>
+        <url>https://github.com/linkedin/dexmaker</url>
+        <copyright>Copyright 2016 LinkedIn Corp.</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>Hamcrest</name>
+        <url>http://hamcrest.org/JavaHamcrest/</url>
+        <copyright>Copyright 2012- hamcrest.org</copyright>
+        <license>BSD 3-Clause License</license>
+    </notice>
+    <notice>
+        <name>Hugo</name>
+        <url>https://github.com/JakeWharton/hugo</url>
+        <copyright>Copyright 2013 Jake Wharton</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>JUnit</name>
+        <url>http://junit.org</url>
+        <copyright>Copyright © 2002-2017 JUnit. All Rights Reserved.</copyright>
+        <license>Eclipse Public License 1.0</license>
+    </notice>
+    <notice>
+        <name>Libphonenumber</name>
+        <url>https://github.com/googlei18n/libphonenumber</url>
+        <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>LicensesDialog</name>
+        <url>https://github.com/PSDev/LicensesDialog</url>
+        <copyright>Copyright 2013-2017 Philip Schiffer</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+
+    <notice>
+        <name>Mockito</name>
+        <url>http://site.mockito.org</url>
+        <copyright>Copyright © 2007 Mockito contributors</copyright>
+        <license>MIT License</license>
+    </notice>
+    <notice>
+        <name>NoNonsense-FilePicker</name>
+        <url>https://github.com/spacecowboy/NoNonsense-FilePicker</url>
+        <copyright>Copyright 2016 Jonas Kalderstam</copyright>
+        <license>Mozilla Public License 2.0</license>
+    </notice>
+    <notice>
+        <name>ShowcaseView</name>
+        <url>https://github.com/amlcurran/ShowcaseView</url>
+        <copyright>Copyright Alex Curran (@amlcurran) 2012-2014. All rights reserved.</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+
+</notices>

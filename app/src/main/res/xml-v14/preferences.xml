@@ -47,6 +47,9 @@
     </Preference>
 
     <Preference
+        android:key="pref_open_source_licenses"
+        android:title="@string/pref_open_source_licenses"/>
+    <Preference
         android:key="pref_submit_debug_logs"
         android:title="@string/pref_submit_log"/>
 </PreferenceScreen>

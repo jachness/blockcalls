@@ -24,7 +24,7 @@ package com.jachness.blockcalls.exceptions;
  */
 
 public class TooShortNumberException extends Exception {
-    public static final int MINIMUM_LENGTH = 4;
+    public static final int MINIMUM_LENGTH = 3;
 
     public TooShortNumberException(String message) {
         super(message);

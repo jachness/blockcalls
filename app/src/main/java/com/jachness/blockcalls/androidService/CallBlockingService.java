@@ -136,7 +136,7 @@ public class CallBlockingService extends Service {
                 }
 
             } catch (PhoneNumberException e) {
-                Log.e(TAG, "Incoming number: {" + incomingNumber + "}", e);
+                Log.w(TAG, "Incoming number: {" + incomingNumber + "}", e);
             } catch (TooShortNumberException e) {
                 Log.w(TAG, "Incoming number: {" + incomingNumber + "}", e);
             }

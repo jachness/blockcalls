@@ -76,14 +76,16 @@ public class NormalizerService {
         }
 
         String number = call.getNumber();
-        if (number.length() < TooShortNumberException.MINIMUM_LENGTH) {
-            throw new TooShortNumberException("Too short number: " + number + ". Minimum length" +
-                    " is " + TooShortNumberException.MINIMUM_LENGTH);
-        }
-
         try {
             PhoneNumberUtil.getInstance().parseAndKeepRawInput(number, call.getCountryISO(),
                     holder);
+
+            String nationalNumber = Long.toString(holder.getNationalNumber());
+            if (nationalNumber.length() < TooShortNumberException.MINIMUM_LENGTH) {
+                throw new TooShortNumberException("Too short national number: " + nationalNumber + ". Minimum length" +
+                        " is " + TooShortNumberException.MINIMUM_LENGTH);
+            }
+
             call.setNormalizedNumber(holder);
         } catch (NumberParseException e) {
             throw new PhoneNumberException("Error parsing number: " + number, e);

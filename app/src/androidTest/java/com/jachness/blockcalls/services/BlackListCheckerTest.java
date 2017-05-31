@@ -58,7 +58,7 @@ public class BlackListCheckerTest extends AndroidTest {
     }
 
     @Test
-    public void testIsBlockable() throws PhoneNumberException, TooShortNumberException {
+    public void testIsBlockable() {
         Log.i(TAG, "Init");
 
         List<String> numbersMatch = new ArrayList<>();
@@ -68,32 +68,69 @@ public class BlackListCheckerTest extends AndroidTest {
         numbersMatch.add("+5458556078");
         numbersNotMatch.add("+5448551234");
         insertData(numbersMatch, numbersNotMatch);
+        int res = -1;
 
         AppPreferences sett = new AppPreferences(getTargetContext());
         sett.setEnableBlackList(false);
         Call call = new Call();
         call.setNumber("48556078");
         call.setCountryISO("AR");
-        normalizerService.normalizeCall(call);
-        int res = checker.isBlockable(call);
-        Assert.assertEquals(IChecker.NONE, res);
-        Assert.assertEquals(null, call.getBlockOrigin());
+        try {
+            normalizerService.normalizeCall(call);
+            res = checker.isBlockable(call);
+            Assert.assertEquals(IChecker.NONE, res);
+            Assert.assertEquals(null, call.getBlockOrigin());
+        } catch (PhoneNumberException e) {
+            Assert.fail();
+        } catch (TooShortNumberException e) {
+            Assert.fail();
+        }
 
 
-        sett.setEnableBlackList(true);
-        call.setNumber("48556078");
-        call.setCountryISO("AR");
-        normalizerService.normalizeCall(call);
-        res = checker.isBlockable(call);
-        Assert.assertEquals(IChecker.YES, res);
-        Assert.assertEquals(BlockOrigin.BLACK_LIST, call.getBlockOrigin());
+        try {
+            sett.setEnableBlackList(true);
+            call = new Call();
+            call.setNumber("48556078");
+            call.setCountryISO("AR");
+            normalizerService.normalizeCall(call);
+            res = checker.isBlockable(call);
+            Assert.assertEquals(IChecker.YES, res);
+            Assert.assertEquals(BlockOrigin.BLACK_LIST, call.getBlockOrigin());
+        } catch (PhoneNumberException e) {
+            Assert.fail();
+        } catch (TooShortNumberException e) {
+            Assert.fail();
+        }
 
-        call.setNumber("99999999");
-        call.setCountryISO("AR");
-        normalizerService.normalizeCall(call);
-        res = checker.isBlockable(call);
-        Assert.assertEquals(IChecker.NONE, res);
-        Assert.assertEquals(null, call.getBlockOrigin());
+        try {
+            call = new Call();
+            call.setNumber("99999999");
+            call.setCountryISO("AR");
+            normalizerService.normalizeCall(call);
+            res = checker.isBlockable(call);
+            Assert.assertEquals(IChecker.NONE, res);
+            Assert.assertEquals(null, call.getBlockOrigin());
+        } catch (PhoneNumberException e) {
+            Assert.fail();
+        } catch (TooShortNumberException e) {
+            Assert.fail();
+        }
+
+        try {
+            call = new Call();
+            call.setNumber("+123");
+            call.setCountryISO("AR");
+            normalizerService.normalizeCall(call);
+            res = checker.isBlockable(call);
+            Assert.fail();
+            Assert.assertEquals(IChecker.NONE, res);
+            Assert.assertEquals(null, call.getBlockOrigin());
+        } catch (PhoneNumberException e) {
+            Assert.fail();
+        } catch (TooShortNumberException e) {
+            Assert.assertTrue(true);
+        }
+
 
     }
 

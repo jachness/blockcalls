@@ -171,7 +171,7 @@ public class InitialPermissionsActivity extends AppCompatActivity {
             //Permission granted is already checked in onResume() method.
             appPreferences.setFirstTimePhonePerm(false);
 
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && !results[1]) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && !results[1]) {
                 Intent intent = new Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
                 startActivity(intent);
             }

@@ -121,10 +121,35 @@ public class BlackListCheckerTest extends AndroidTest {
             call.setNumber("+123");
             call.setCountryISO("AR");
             normalizerService.normalizeCall(call);
-            res = checker.isBlockable(call);
+            checker.isBlockable(call);
             Assert.fail();
-            Assert.assertEquals(IChecker.NONE, res);
-            Assert.assertEquals(null, call.getBlockOrigin());
+        } catch (PhoneNumberException e) {
+            Assert.fail();
+        } catch (TooShortNumberException e) {
+            Assert.assertTrue(true);
+        }
+
+        try {
+            call = new Call();
+            call.setNumber("+541234");
+            call.setCountryISO("AR");
+            normalizerService.normalizeCall(call);
+            res = checker.isBlockable(call);
+            Assert.assertEquals(IChecker.YES, res);
+            Assert.assertEquals(BlockOrigin.BLACK_LIST, call.getBlockOrigin());
+        } catch (PhoneNumberException e) {
+            Assert.fail();
+        } catch (TooShortNumberException e) {
+            Assert.fail();
+        }
+
+        try {
+            call = new Call();
+            call.setNumber("+5498");
+            call.setCountryISO("AR");
+            normalizerService.normalizeCall(call);
+            checker.isBlockable(call);
+            Assert.fail();
         } catch (PhoneNumberException e) {
             Assert.fail();
         } catch (TooShortNumberException e) {

@@ -67,7 +67,7 @@ public class CallBlockingService extends Service {
     @DebugLog
     public void onCreate() {
         super.onCreate();
-        AppContext.dagger.inject(this);
+        ((AppContext) getApplicationContext()).getDagger().inject(this);
         NotificationCompat.Builder not = new NotificationCompat.Builder(this).setContentTitle
                 (getResources().getString(R.string.blocking_service_started)).setOngoing(true)
                 //Content intent is added to satisfy android 2.x requirements

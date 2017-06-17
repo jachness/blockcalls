@@ -37,7 +37,7 @@ import dagger.Lazy;
  * Created by jachness on 10/11/2016.
  */
 public class AppContext extends Application {
-    public static AllComponent dagger;
+    private AllComponent dagger;
     @Inject
     AppPreferences appPreferences;
     @Inject
@@ -65,6 +65,10 @@ public class AppContext extends Application {
 
     public BlackListWrapper getBlackListWrapper() {
         return blackListWrapper.get();
+    }
+
+    public AllComponent getDagger() {
+        return dagger;
     }
 
 

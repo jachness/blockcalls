@@ -34,6 +34,11 @@ import com.jachness.blockcalls.BuildConfig;
 import com.jachness.blockcalls.R;
 import com.jachness.blockcalls.exceptions.PhoneNumberException;
 import com.jachness.blockcalls.exceptions.TooShortNumberException;
+import com.jachness.blockcalls.modules.AllComponent;
+import com.jachness.blockcalls.modules.AppModule;
+import com.jachness.blockcalls.modules.BlockModule;
+import com.jachness.blockcalls.modules.DAOModule;
+import com.jachness.blockcalls.modules.DaggerAllComponent;
 import com.jachness.blockcalls.services.BlockWrapper;
 import com.jachness.blockcalls.stuff.AppContext;
 import com.jachness.blockcalls.stuff.Util;
@@ -54,6 +59,7 @@ public class CallBlockingService extends Service {
     private static final int NOTIFICATION_BLOCKED_NUMBER = R.string.blocked_number;
     @Inject
     BlockWrapper blockWrapper;
+    private AllComponent dagger;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -67,7 +73,12 @@ public class CallBlockingService extends Service {
     @DebugLog
     public void onCreate() {
         super.onCreate();
-        ((AppContext) getApplicationContext()).getDagger().inject(this);
+        //For some reason, the getApplicationContext() sometimes throws a ClassCastException, so a new
+        // dagger context is created
+        dagger = DaggerAllComponent.builder().blockModule(new BlockModule(this)).appModule(new
+                AppModule(this)).dAOModule(new DAOModule(this)).build();
+        dagger.inject(this);
+
         NotificationCompat.Builder not = new NotificationCompat.Builder(this).setContentTitle
                 (getResources().getString(R.string.blocking_service_started)).setOngoing(true)
                 //Content intent is added to satisfy android 2.x requirements
